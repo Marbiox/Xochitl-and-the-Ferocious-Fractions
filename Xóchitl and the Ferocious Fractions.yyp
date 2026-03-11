@@ -19,7 +19,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.2.213",
+    "IDEVersion":"2024.14.3.217",
   },
   "name":"Xóchitl and the Ferocious Fractions",
   "resources":[
@@ -30,6 +30,7 @@
     {"id":{"name":"oTextbox","path":"objects/oTextbox/oTextbox.yy",},},
     {"id":{"name":"oWall","path":"objects/oWall/oWall.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"oldSprite","path":"sprites/oldSprite/oldSprite.yy",},},
     {"id":{"name":"sBox","path":"sprites/sBox/sBox.yy",},},
     {"id":{"name":"sNPC","path":"sprites/sNPC/sNPC.yy",},},
     {"id":{"name":"sPlayer","path":"sprites/sPlayer/sPlayer.yy",},},
