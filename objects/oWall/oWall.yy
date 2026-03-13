@@ -6,8 +6,8 @@
   "name":"oWall",
   "overriddenProperties":[],
   "parent":{
-    "name":"Xóchitl and the Ferocious Fractions",
-    "path":"Xóchitl and the Ferocious Fractions.yyp",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

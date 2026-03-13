@@ -54,3 +54,14 @@ jumpKeyPressed = max(keyboard_check_pressed(vk_space), keyboard_check_pressed(vk
 	
 	//Move
 	y += ySpeed;
+
+//Checkpoint and spike collision
+	if place_meeting(x, y, oCheckpoint) {
+		checkpointPos = [x,y]	
+	}
+	
+	if place_meeting(x, y, oSpike) {
+		x = checkpointPos[0]
+		y = checkpointPos[1]
+	}
+	

@@ -8,3 +8,5 @@ ySpeed = 0;
 grav = 0.275;
 terminalVelocity = 4;
 jumpSpeed = -4.5;
+
+checkpointPos = [x,y]

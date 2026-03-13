@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Xóchitl and the Ferocious Fractions",
-    "path":"Xóchitl and the Ferocious Fractions.yyp",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

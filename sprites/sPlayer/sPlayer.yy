@@ -45,8 +45,8 @@
   },
   "origin":7,
   "parent":{
-    "name":"Xóchitl and the Ferocious Fractions",
-    "path":"Xóchitl and the Ferocious Fractions.yyp",
+    "name":"Sprites",
+    "path":"folders/Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
