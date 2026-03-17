@@ -1,19 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"oTextbox",
+  "%Name":"oSettings",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":12,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oTextbox",
+  "name":"oSettings",
   "overriddenProperties":[],
   "parent":{
-    "name":"Dialogue System",
-    "path":"folders/Dialogue System.yy",
+    "name":"Xóchitl and the Ferocious Fractions",
+    "path":"Xóchitl and the Ferocious Fractions.yyp",
   },
   "parentObjectId":null,
-  "persistent":false,
+  "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sTextbox",
-    "path":"sprites/sTextbox/sTextbox.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

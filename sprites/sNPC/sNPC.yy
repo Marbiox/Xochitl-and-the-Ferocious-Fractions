@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"NPC",
-    "path":"folders/NPC.yy",
+    "path":"folders/Objects/NPC.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
