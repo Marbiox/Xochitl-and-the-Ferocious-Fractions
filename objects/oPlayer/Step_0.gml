@@ -4,6 +4,12 @@ leftKey = keyboard_check(vk_left);
 jumpKeyPressed = max(keyboard_check_pressed(vk_space), keyboard_check_pressed(vk_up))
 
 //------------------Movement------------------
+canMove = !Manager.textboxActive;
+if !canMove {
+	rightKey = 0;
+	leftKey = 0;
+	jumpKeyPressed = 0;
+}
 //X Movement
 //Direction
 moveDirection = rightKey - leftKey;
@@ -26,7 +32,7 @@ if place_meeting(x + xSpeed, y, oWall) {
 }
 
 //Move
-if canMove x += xSpeed; 
+x += xSpeed; 
 
 //Y Movement
 //Gravity
@@ -40,7 +46,7 @@ if jumpKeyPressed && place_meeting(x, y + 1, oWall) {
 }
 	
 //Y Collision
-var subPixel = 0.5;
+subPixel = 0.5;
 if place_meeting(x, y + ySpeed, oWall) {
 		
 	//Make sure there is no space between player and wall
@@ -54,8 +60,9 @@ if place_meeting(x, y + ySpeed, oWall) {
 }
 	
 //Move
-if canMove y += ySpeed;
+y += ySpeed;
 
+//------------------Spike Collision------------------
 //Checkpoint and spike collision
 if place_meeting(x, y, oCheckpoint) {
 	checkpointPos = [x,y]	
@@ -66,7 +73,8 @@ if place_meeting(x, y, oSpike) {
 	y = checkpointPos[1]
 }
 
+
 //------------------NPC Collision------------------
-if place_meeting(x,y,oNPC) && keyboard_check_pressed(ord("E")) {
+if place_meeting(x,y,oNpc) && keyboard_check_pressed(ord("E")) {
 	CreateTextbox(DIALOGUE.NPC1);
 }

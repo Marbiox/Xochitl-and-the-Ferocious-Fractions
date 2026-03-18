@@ -1,16 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"oSpike",
-  "eventList":[],
+  "%Name":"Manager",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"oSpike",
+  "name":"Manager",
   "overriddenProperties":[],
   "parent":{
-    "name":"NPC",
-    "path":"folders/Objects/NPC.yy",
+    "name":"Xóchitl and the Ferocious Fractions",
+    "path":"Xóchitl and the Ferocious Fractions.yyp",
   },
   "parentObjectId":null,
-  "persistent":false,
+  "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
@@ -27,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sSpike",
-    "path":"sprites/sSpike/sSpike.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

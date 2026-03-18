@@ -2,3 +2,9 @@ enum DIALOGUE {
 	NPC1,
 	NPC2,
 }
+
+enum CHARACTER {
+	PLAYER,
+	NPC,
+	NPCMAD,
+}

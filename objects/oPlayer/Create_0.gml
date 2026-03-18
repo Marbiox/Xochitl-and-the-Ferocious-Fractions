@@ -1,3 +1,4 @@
+depth = -100
 //Moving
 moveDirection = 0;
 moveSpeed = 2;
