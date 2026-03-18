@@ -1,15 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"oNPC",
+  "%Name":"oSpeakblock",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oNPC",
+  "name":"oSpeakblock",
   "overriddenProperties":[],
   "parent":{
-    "name":"NPC",
-    "path":"folders/Objects/NPC.yy",
+    "name":"Dialogue System",
+    "path":"folders/Dialogue System.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sNPC",
-    "path":"sprites/sNPC/sNPC.yy",
+    "name":"sSpeakblock",
+    "path":"sprites/sSpeakblock/sSpeakblock.yy",
   },
   "spriteMaskId":null,
   "visible":true,

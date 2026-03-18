@@ -1,0 +1,4 @@
+enum DIALOGUE {
+	NPC1,
+	NPC2,
+}

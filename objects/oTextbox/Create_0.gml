@@ -1,9 +1,10 @@
 depth = -999;
+textId = "";
 
 //textbox parameters
 textScale = 0.25;
-textboxWidth = 240;
-textboxHeight = 80;
+textboxWidth = 300;
+textboxHeight = 70;
 border = 8;
 lineSeperation = 12 / textScale;
 lineWidth = (textboxWidth - border * 2) / textScale;
@@ -14,11 +15,17 @@ textboxImageSpeed = 6/60;
 //text
 page = 0;
 pageNumber = 0;
-text[0] = "Do some fractions bro";
-text[1] = "What is 10/4 simplified, I really like doing fractions, text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text";
-text[2] = "It is 5/2!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+text[0] = 0;
 textLength[0] = string_length(text[0]);
 drawChar = 0;
 textSpeed = 1;
+
+//options
+option[0] = "";
+optionLinkId[0] = -1;
+optionPos = 0;
+optionNumber = 0;
  
 setup = false;
+
+oPlayer.canMove = false;

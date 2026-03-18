@@ -10,3 +10,5 @@ terminalVelocity = 4;
 jumpSpeed = -4.5;
 
 checkpointPos = [x,y]
+
+canMove = true;

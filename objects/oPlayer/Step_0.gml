@@ -1,67 +1,72 @@
-//Get Inputs 
+ //Get Inputs 
 rightKey = keyboard_check(vk_right);
 leftKey = keyboard_check(vk_left);
 jumpKeyPressed = max(keyboard_check_pressed(vk_space), keyboard_check_pressed(vk_up))
 
+//------------------Movement------------------
 //X Movement
-	//Direction
-	moveDirection = rightKey - leftKey;
+//Direction
+moveDirection = rightKey - leftKey;
 
-	//Get xSpeed
-	xSpeed = moveDirection * moveSpeed;
+//Get xSpeed
+xSpeed = moveDirection * moveSpeed;
 
-	//x Collision
-	var subPixel = 0.5
-	if place_meeting(x + xSpeed, y, oWall) {
+//x Collision
+var subPixel = 0.5
+if place_meeting(x + xSpeed, y, oWall) {
 		
-		//Make sure there is no space between player and wall
-		var pixelCheck = subPixel * sign(xSpeed);
-		while !place_meeting(x + pixelCheck, y, oWall) {
-			x += pixelCheck;
-		}
-	
-		//Set xSpeed to zero to "collide"
-		xSpeed = 0;
+	//Make sure there is no space between player and wall
+	var pixelCheck = subPixel * sign(xSpeed);
+	while !place_meeting(x + pixelCheck, y, oWall) {
+		x += pixelCheck;
 	}
+	
+	//Set xSpeed to zero to "collide"
+	xSpeed = 0;
+}
 
-	//Move
-	x += xSpeed; 
+//Move
+if canMove x += xSpeed; 
 
 //Y Movement
-	//Gravity
-	ySpeed += grav;
+//Gravity
+ySpeed += grav;
 
-	if ySpeed > terminalVelocity {ySpeed = terminalVelocity}
+if ySpeed > terminalVelocity {ySpeed = terminalVelocity}
 	
-	//Jump
-	if jumpKeyPressed && place_meeting(x, y + 1, oWall) {
-		ySpeed = jumpSpeed;
-	}
+//Jump
+if jumpKeyPressed && place_meeting(x, y + 1, oWall) {
+	ySpeed = jumpSpeed;
+}
 	
-	//Y Collision
-	var subPixel = 0.5;
-	if place_meeting(x, y + ySpeed, oWall) {
+//Y Collision
+var subPixel = 0.5;
+if place_meeting(x, y + ySpeed, oWall) {
 		
-		//Make sure there is no space between player and wall
-		var pixelCheck = subPixel * sign(ySpeed)
-		while !place_meeting(x, y + subPixel, oWall) {
-			y += pixelCheck;
-		}
-		
-		//Set ySpeed to zero to "collide"
-		ySpeed = 0;
+	//Make sure there is no space between player and wall
+	var pixelCheck = subPixel * sign(ySpeed)
+	while !place_meeting(x, y + subPixel, oWall) {
+		y += pixelCheck;
 	}
+		
+	//Set ySpeed to zero to "collide"
+	ySpeed = 0;
+}
 	
-	//Move
-	y += ySpeed;
+//Move
+if canMove y += ySpeed;
 
 //Checkpoint and spike collision
-	if place_meeting(x, y, oCheckpoint) {
-		checkpointPos = [x,y]	
-	}
+if place_meeting(x, y, oCheckpoint) {
+	checkpointPos = [x,y]	
+}
 	
-	if place_meeting(x, y, oSpike) {
-		x = checkpointPos[0]
-		y = checkpointPos[1]
-	}
-	
+if place_meeting(x, y, oSpike) {
+	x = checkpointPos[0]
+	y = checkpointPos[1]
+}
+
+//------------------NPC Collision------------------
+if place_meeting(x,y,oNPC) && keyboard_check_pressed(ord("E")) {
+	CreateTextbox(DIALOGUE.NPC1);
+}
