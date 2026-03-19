@@ -24,7 +24,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.2.213",
+    "IDEVersion":"2024.14.3.217",
   },
   "name":"Xóchitl and the Ferocious Fractions",
   "resources":[
@@ -42,9 +42,9 @@
     {"id":{"name":"oWall","path":"objects/oWall/oWall.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
-    {"id":{"name":"enumerators","path":"scripts/enumerators/enumerators.yy",},},
+    {"id":{"name":"Enumerators","path":"scripts/Enumerators/Enumerators.yy",},},
+    {"id":{"name":"MovementFunctions","path":"scripts/MovementFunctions/MovementFunctions.yy",},},
     {"id":{"name":"scrGameText","path":"scripts/scrGameText/scrGameText.yy",},},
-    {"id":{"name":"Script4","path":"scripts/Script4/Script4.yy",},},
     {"id":{"name":"scrTextboxFunctions","path":"scripts/scrTextboxFunctions/scrTextboxFunctions.yy",},},
     {"id":{"name":"oldSprite","path":"sprites/oldSprite/oldSprite.yy",},},
     {"id":{"name":"sCheckpoint","path":"sprites/sCheckpoint/sCheckpoint.yy",},},

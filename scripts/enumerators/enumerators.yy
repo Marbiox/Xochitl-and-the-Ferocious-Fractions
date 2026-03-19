@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"enumerators",
+  "%Name":"Enumerators",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"enumerators",
+  "name":"Enumerators",
   "parent":{
     "name":"Xóchitl and the Ferocious Fractions",
     "path":"Xóchitl and the Ferocious Fractions.yyp",
