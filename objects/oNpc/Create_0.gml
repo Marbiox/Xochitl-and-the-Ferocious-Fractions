@@ -1,0 +1,2 @@
+introductionComplete = false;
+introductionStarted = false;

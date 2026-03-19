@@ -44,9 +44,9 @@ function SetOption(_option, _linkId) {
 function CreateTextbox(_textId, _optionId = "") {
 	if !Manager.textboxActive {
 		Manager.textboxActive = true;
-		with(instance_create_depth(0, 0, -999, oTextbox)) {
+	}
+	with(instance_create_depth(0, 0, -999, oTextbox)) {
 			textId = _textId;
 			ScrGameText(_textId, _optionId);
-		}
 	}
 }

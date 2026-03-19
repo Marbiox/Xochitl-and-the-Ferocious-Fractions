@@ -16,14 +16,23 @@ function ScrGameText(_textId, _optionId){
 					break;
 				case "wrong":
 					WriteText("HOW DARE YOU BE WRONG! BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD", CHARACTER.NPCMAD);
+					WriteText("Try again you fool", CHARACTER.NPC);
+					WriteText("What is 10/4 simplified", CHARACTER.NPC);
+					SetOption("20", "wrong");
+					SetOption("5/2", "correct");
 					break;
 				case "correct":
-					WriteText("Testing Correct", CHARACTER.NPC);
+					WriteText("You my friend are a genius", CHARACTER.NPC);
+					WriteText("I have opened the gate so that you can collect your 5 eggs! IDK why you want eggs but who am I to stop you after you did such a great job with those fractions!", CHARACTER.NPC);
 					break;
 			}
 			break;
+		case DIALOGUE.NPC1_INTRODUCTION_COMPLETE:
+			WriteText("Go collect your eggs bro");
+			break;
 		case DIALOGUE.NPC2:
 			WriteText("Hello I am NPC2");
+			break;
 		
 	}
 }

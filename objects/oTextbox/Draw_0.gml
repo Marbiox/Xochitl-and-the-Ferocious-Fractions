@@ -105,11 +105,11 @@ if acceptKey {
 			drawChar = 0;
 		}
 		else {
-			Manager.textboxActive = false;
 			//link text for options
 			if optionNumber > 0 {
 				CreateTextbox(textId, optionLinkId[optionPos]);
 			}
+			else Manager.textboxActive = false;
 			instance_destroy();
 		}
 	}

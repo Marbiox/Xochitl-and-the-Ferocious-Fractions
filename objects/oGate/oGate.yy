@@ -1,12 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"oNpc",
+  "%Name":"oGate",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oNpc",
+  "name":"oGate",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sNpc",
-    "path":"sprites/sNpc/sNpc.yy",
+    "name":"sGate",
+    "path":"sprites/sGate/sGate.yy",
   },
   "spriteMaskId":null,
   "visible":true,

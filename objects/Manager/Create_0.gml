@@ -1,1 +1,2 @@
- textboxActive = false;
+textboxActive = false;
+eventIntroductionComplete = false;

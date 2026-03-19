@@ -13,11 +13,11 @@ xSpeed = moveDirection * moveSpeed;
 
 //x Collision
 var subPixel = 0.5
-if place_meeting(x + xSpeed, y, oWall) {
+if place_meeting(x + xSpeed, y, collisionArray) {
 		
 	//Make sure there is no space between player and wall
 	var pixelCheck = subPixel * sign(xSpeed);
-	while !place_meeting(x + pixelCheck, y, oWall) {
+	while !place_meeting(x + pixelCheck, y, collisionArray) {
 		x += pixelCheck;
 	}
 	
@@ -53,11 +53,11 @@ if jumpHoldTimer > 0 {
 	
 //Y Collision
 subPixel = 0.5;
-if place_meeting(x, y + ySpeed, oWall) {
+if place_meeting(x, y + ySpeed, collisionArray) {
 		
 	//Make sure there is no space between player and wall
 	var pixelCheck = subPixel * sign(ySpeed)
-	while !place_meeting(x, y + subPixel, oWall) {
+	while !place_meeting(x, y + subPixel, collisionArray) {
 		y += pixelCheck;
 	}
 		
@@ -65,7 +65,7 @@ if place_meeting(x, y + ySpeed, oWall) {
 	ySpeed = 0;
 }
 	
-	if ySpeed >= 0 && place_meeting(x, y+1, oWall) {
+	if ySpeed >= 0 && place_meeting(x, y+1, collisionArray) {
 		onGround = true;	
 	}
 	else {
@@ -83,10 +83,4 @@ if place_meeting(x, y, oCheckpoint) {
 if place_meeting(x, y, oSpike) {
 	x = checkpointPos[0]
 	y = checkpointPos[1]
-}
-
-
-//------------------NPC Collision------------------
-if place_meeting(x,y,oNpc) && keyboard_check_pressed(ord("E")) {
-	CreateTextbox(DIALOGUE.NPC1);
 }
