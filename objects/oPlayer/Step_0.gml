@@ -1,15 +1,9 @@
- //Get Inputs 
-rightKey = keyboard_check(vk_right);
-leftKey = keyboard_check(vk_left);
-jumpKeyPressed = max(keyboard_check_pressed(vk_space), keyboard_check_pressed(vk_up))
+//Get Inputs
+GetControls()
 
 //------------------Movement------------------
 canMove = !Manager.textboxActive;
-if !canMove {
-	rightKey = 0;
-	leftKey = 0;
-	jumpKeyPressed = 0;
-}
+if !canMove { BlockInput() }
 //X Movement
 //Direction
 moveDirection = rightKey - leftKey;
@@ -41,8 +35,20 @@ ySpeed += grav;
 if ySpeed > terminalVelocity {ySpeed = terminalVelocity}
 	
 //Jump
-if jumpKeyPressed && place_meeting(x, y + 1, oWall) {
+if jumpKeyBuffered && onGround {
+	jumpKeyBuffered = false;
+	jumpKeyBufferedTimer = 0;
 	ySpeed = jumpSpeed;
+	
+	jumpHoldTimer += jumpHoldFrames;
+}
+
+if !jumpKey {
+	jumpHoldTimer = 0;
+}
+if jumpHoldTimer > 0 {
+	ySpeed = jumpSpeed;
+	jumpHoldTimer--;
 }
 	
 //Y Collision
@@ -59,6 +65,12 @@ if place_meeting(x, y + ySpeed, oWall) {
 	ySpeed = 0;
 }
 	
+	if ySpeed >= 0 && place_meeting(x, y+1, oWall) {
+		onGround = true;	
+	}
+	else {
+		onGround = false;
+	}
 //Move
 y += ySpeed;
 
