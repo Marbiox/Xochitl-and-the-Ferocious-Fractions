@@ -13,7 +13,9 @@
   "For3D":false,
   "frames":[
     {"$GMSpriteFrame":"v1","%Name":"4f475c98-c340-460f-8524-2de8453b14e2","name":"4f475c98-c340-460f-8524-2de8453b14e2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"a3bf6f2e-e5b4-4162-9f1b-286755127dd3","name":"a3bf6f2e-e5b4-4162-9f1b-286755127dd3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"6d32980e-84ea-480b-ae8e-9eddacb9c2fc","name":"6d32980e-84ea-480b-ae8e-9eddacb9c2fc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"56447b94-fa6e-42fa-8697-f3dc46f51c21","name":"56447b94-fa6e-42fa-8697-f3dc46f51c21","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -70,7 +72,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":2.0,
+    "length":4.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -93,8 +95,14 @@
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"4f475c98-c340-460f-8524-2de8453b14e2","path":"sprites/sPlayerSpeak/sPlayerSpeak.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"f7ffad5b-4e71-4aed-a4c4-bd4318823666","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a3bf6f2e-e5b4-4162-9f1b-286755127dd3","path":"sprites/sPlayerSpeak/sPlayerSpeak.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"5c93a4dd-fca7-4c68-bd35-33e2a1c96f1e","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6d32980e-84ea-480b-ae8e-9eddacb9c2fc","path":"sprites/sPlayerSpeak/sPlayerSpeak.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"8913b317-5817-45cd-be43-8d78f3fcfb1a","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"8913b317-5817-45cd-be43-8d78f3fcfb1a","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"56447b94-fa6e-42fa-8697-f3dc46f51c21","path":"sprites/sPlayerSpeak/sPlayerSpeak.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"62bc7002-fa7d-4f4a-9707-40d90d695f08","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
