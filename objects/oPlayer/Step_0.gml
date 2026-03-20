@@ -57,7 +57,7 @@ if place_meeting(x, y + ySpeed, collisionArray) {
 		
 	//Make sure there is no space between player and wall
 	var pixelCheck = subPixel * sign(ySpeed)
-	while !place_meeting(x, y + subPixel, collisionArray) {
+	while !place_meeting(x, y + pixelCheck, collisionArray) {
 		y += pixelCheck;
 	}
 		
@@ -83,4 +83,21 @@ if place_meeting(x, y, oCheckpoint) {
 if place_meeting(x, y, oSpike) {
 	x = checkpointPos[0]
 	y = checkpointPos[1]
+}
+
+//------------------Block Pickup------------------
+
+if interaction && place_meeting(x, y, oNumberBlock) && block == noone {
+	block = instance_place(x, y, oNumberBlock);
+	block.held = true;
+}
+else if interaction && block != noone {
+	block.x = x;
+	block.y = y
+	block.held = false;
+	block = noone;
+}
+if block != noone {
+	block.x = x;
+	block.y = y - sprite_height;
 }

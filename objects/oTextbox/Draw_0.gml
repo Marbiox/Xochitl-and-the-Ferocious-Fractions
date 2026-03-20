@@ -3,12 +3,13 @@ acceptKey = keyboard_check_pressed(vk_space);
 textboxX = camera_get_view_x(view_camera[0]);
 textboxY = camera_get_view_y(view_camera[0]) + 160;
 
+draw_set_font(fontMain);
+draw_set_valign(fa_top);
+draw_set_halign(fa_left);
+
 //setup
 if !setup {
 	setup = true;
-	draw_set_font(fontMain);
-	draw_set_valign(fa_top);
-	draw_set_halign(fa_left);
 	
 	//loop through pages
 	for (var p = 0; p < pageNumber; p++) {

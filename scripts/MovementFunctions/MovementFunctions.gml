@@ -6,6 +6,9 @@ function ControlsSetup() {
 
 function GetControls() {
 	
+	//Interaction Input
+	interaction = keyboard_check_pressed(ord("E"))
+	
 	//Direction Inputs
 	rightKey = max(keyboard_check(vk_right), keyboard_check(ord("D")));
 	leftKey = max(keyboard_check(vk_left), keyboard_check(ord("A")));

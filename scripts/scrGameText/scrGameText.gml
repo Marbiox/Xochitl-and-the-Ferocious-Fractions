@@ -28,7 +28,7 @@ function ScrGameText(_textId, _optionId){
 			}
 			break;
 		case DIALOGUE.NPC1_INTRODUCTION_COMPLETE:
-			WriteText("Go collect your eggs bro");
+			WriteText("Go collect your eggs bro", CHARACTER.NPC);
 			break;
 		case DIALOGUE.NPC2:
 			WriteText("Hello I am NPC2");

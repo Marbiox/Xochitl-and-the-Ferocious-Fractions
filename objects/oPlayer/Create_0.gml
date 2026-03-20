@@ -22,3 +22,5 @@ checkpointPos = [x,y]
 canMove = true;
 
 collisionArray = [oWall, oGate]
+
+block = noone
