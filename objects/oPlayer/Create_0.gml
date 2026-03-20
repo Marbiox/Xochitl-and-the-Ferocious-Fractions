@@ -5,7 +5,10 @@ ControlsSetup();
 
 //Moving
 moveDirection = 0;
-moveSpeed = 2;
+minSpeed = 2;
+maxSpeed = 4
+sprintingFrames = 30;
+sprintingTimer = 0;
 xSpeed = 0;
 ySpeed = 0;
 
@@ -16,6 +19,10 @@ jumpSpeed = -3;
 jumpHoldTimer = 0;
 jumpHoldFrames = 18;
 onGround = true;
+
+//Moving Platforms
+myFloorPlatform = noone;
+movingPlatformXSpeed = 0;
 
 checkpointPos = [x,y]
 

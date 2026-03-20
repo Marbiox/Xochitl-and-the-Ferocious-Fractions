@@ -39,3 +39,13 @@ function BlockInput() {
 	jumpKeyBuffered = false;
 	jumpKeyBufferedTimer = 0;
 }
+
+function SetOnGround(_val = true) {
+	if _val = true {
+		onGround = true;	
+	} 
+	else {
+		onGround = false;
+		myFloorPlatform = noone;
+	}
+}
