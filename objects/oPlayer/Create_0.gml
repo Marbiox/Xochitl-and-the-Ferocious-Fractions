@@ -33,3 +33,11 @@ canMove = true;
 block = noone
 blockXScale = 1;
 blockYScale = 1;
+
+//Bubble Trouble
+bubbleShootingTimer = 180;
+bubbleShootingFrames = 180;
+
+
+//sprite stuff
+facingRight = false;

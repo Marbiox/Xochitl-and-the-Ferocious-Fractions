@@ -1,6 +1,9 @@
 //Get Inputs
 GetControls()
 
+if !facingRight & rightKey { facingRight = true; }
+else if facingRight && leftKey { facingRight = false; }
+
 if (block != noone) {
 	image_yscale = blockYScale;	
 }
@@ -258,6 +261,32 @@ image_blend = c_white;
 if place_meeting(x, y, oWall) {
 	image_blend = c_red;	
 }
+
+#endregion
+
+//------------------Bubble Trouble------------------
+#region
+bubbleShootingTimer++;
+if bKey && bubbleShootingTimer >= bubbleShootingFrames && (!instance_exists(myFloorPlatform) || myFloorPlatform.object_index != oBubble) {
+	bubble = instance_create_depth(x, y, -30, oBubble);
+	bubble.facingRight = facingRight;
+	if facingRight { bubble.x = x + 15; }
+	else if !facingRight { bubble.x = x - bubble.sprite_width - 15; }
+	bubble.y = y + bbox_top - bbox_bottom;
+	bubbleShootingTimer = 0;
+}
+
+if bubbleShootingTimer < bubbleShootingFrames {
+	image_blend = c_aqua;
+}
+
+#endregion
+
+//------------------Sprite Stuff------------------
+#region
+
+if facingRight && image_xscale > 0 { image_xscale *= -1;  }
+else if !facingRight && image_xscale < 0 { image_xscale *= -1; }
 
 #endregion
 

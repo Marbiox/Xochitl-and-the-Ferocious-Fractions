@@ -44,6 +44,7 @@ function GetControls() {
 	rightKey = max(keyboard_check(vk_right), keyboard_check(ord("D")));
 	leftKey = max(keyboard_check(vk_left), keyboard_check(ord("A")));
 	downKey = max(keyboard_check(vk_down), keyboard_check(ord("S")));
+	bKey = keyboard_check(ord("B"));
 	
 	//Action Inputs
 	jumpKeyPressed = max(keyboard_check_pressed(vk_space), keyboard_check_pressed(vk_up), keyboard_check_pressed(ord("W")));
