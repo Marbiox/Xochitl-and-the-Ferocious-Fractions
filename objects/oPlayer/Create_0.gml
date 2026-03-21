@@ -24,11 +24,12 @@ onGround = true;
 myFloorPlatform = noone;
 movingPlatformXSpeed = 0;
 forgetSemisolid = noone;
+earlyMovingPlatformXSpeed = false;
 
 checkpointPos = [x,y]
 
 canMove = true;
 
-collisionArray = [oWall, oGate]
-
 block = noone
+blockXScale = 1;
+blockYScale = 1;

@@ -1,7 +1,86 @@
 //Get Inputs
 GetControls()
 
-//------------------Movement------------------
+if (block != noone) {
+	image_yscale = blockYScale;	
+}
+
+//------------------Solid Moving Platform Collision------------------
+#region
+//Get out of solid moving platforms
+var _rightWall = noone;
+var _leftWall = noone;
+var _bottomWall = noone;
+var _topWall = noone;
+
+var _list = ds_list_create();
+var _listSize = instance_place_list(x, y, oMovingPlatform, _list, false);
+
+for (var i = 0; i < _listSize; i++) {
+	var _listInstance = _list[| i];
+	
+	//Get closest walls in all directions
+	//Right Wall
+	if _listInstance.bbox_left - _listInstance.xSpeed >= bbox_right - 1 {
+		if !instance_exists(_rightWall) || _listInstance.bbox_left < _rightWall.bbox_left {
+			_rightWall = _listInstance;	
+		}
+	}
+	//Left Wall
+	if _listInstance.bbox_right - _listInstance.xSpeed <= bbox_left + 1 {
+		if !instance_exists(_leftWall) || _listInstance.bbox_right < _leftWall.bbox_right {
+			_leftWall = _listInstance;	
+		}
+	}
+	//Bottom Wall
+	if _listInstance.bbox_top - _listInstance.ySpeed >= bbox_bottom - 1 {
+		if !_bottomWall || _listInstance.bbox_top < _bottomWall.bbox_top {
+			_bottomWall = _listInstance;	
+		}
+	}
+	//Top Wall
+	if _listInstance.bbox_bottom - _listInstance.ySpeed <= bbox_top + 1 {
+		if !_topWall || _listInstance.bbox_bottom > _topWall.bbox_bottom {
+			_topWall = _listInstance;
+		}
+	}
+	
+}
+ds_list_destroy(_list);
+
+//Get out of walls
+if instance_exists(_rightWall) {
+	var _rightDistance = bbox_right - x;
+	x = _rightWall.bbox_left - _rightDistance;
+}
+if instance_exists(_leftWall) {
+	var _leftDistance = x - bbox_left;
+	x = _leftWall.bbox_right + _leftDistance;
+}
+if instance_exists(_bottomWall) {
+	var _bottomDistance = bbox_bottom - y;
+	y = _bottomWall.bbox_top - _bottomDistance;
+}
+if instance_exists(_topWall) {
+	var _upDistance = y - bbox_top;
+	var _targetY = _topWall.bbox_bottom + _upDistance;
+	if !place_meeting(x, _targetY, oWall) {
+		y = _targetY;	
+	}
+}
+	
+//Don't get left behind by moving platforms
+earlyMovingPlatformXSpeed = false;
+if instance_exists(myFloorPlatform) && myFloorPlatform.xSpeed != 0 && !place_meeting(x, y + terminalVelocity + 1, myFloorPlatform) {
+	if !place_meeting(x + myFloorPlatform.xSpeed, y, oWall) {
+		x += myFloorPlatform.xSpeed;	
+		earlyMovingPlatformXSpeed = true;
+	}
+}
+#endregion
+
+//------------------Movement and X Collision------------------
+#region
 canMove = !Manager.textboxActive;
 if !canMove { BlockInput() }
 //X Movement
@@ -22,11 +101,11 @@ xSpeed += extraSpeed;
 
 //x Collision
 var subPixel = 0.5
-if place_meeting(x + xSpeed, y, collisionArray) {
+if place_meeting(x + xSpeed, y, oWall) {
 		
 	//Make sure there is no space between player and wall
 	var pixelCheck = subPixel * sign(xSpeed);
-	while !place_meeting(x + pixelCheck, y, collisionArray) {
+	while !place_meeting(x + pixelCheck, y, oWall) {
 		x += pixelCheck;
 	}
 	
@@ -43,7 +122,7 @@ ySpeed += grav;
 
 if ySpeed > terminalVelocity {ySpeed = terminalVelocity}
 
-//Jump
+//Jumping
 if jumpKeyBuffered && onGround {
 	jumpKeyBuffered = false;
 	jumpKeyBufferedTimer = 0;
@@ -62,18 +141,18 @@ if jumpHoldTimer > 0 {
 	jumpHoldTimer--;
 }
 if !jumpKey { jumpHoldTimer = 0; }
-	
-//Y Collision
-//Check for solid and semisolid platforms
+#endregion
 
-//upwards Y collision
+//------------------Y Collision and X Moving Platform Collision------------------
+#region
+//Upwards Y Collision
 if place_meeting(x, y + ySpeed, oWall) && ySpeed < 0 {
 	var _pixelCheck = 0.5 * sign(ySpeed)
 	while !place_meeting(x, y + _pixelCheck, oWall) { y += _pixelCheck; }
 	ySpeed = 0;
 }
 
-//downwards Y collision
+//Downwards Y Collision
 var _clampYSpeed = max(0, ySpeed);
 var _list = ds_list_create();
 var _array = array_create(0);
@@ -133,7 +212,7 @@ if downKey {
 }
 
 //Move
-y += ySpeed;
+if !place_meeting(x, y + ySpeed, oWall) { y += ySpeed; }
 
 if instance_exists(forgetSemisolid) && !place_meeting(x, y, forgetSemisolid) {
 	forgetSemisolid = noone;	
@@ -143,7 +222,7 @@ if instance_exists(forgetSemisolid) && !place_meeting(x, y, forgetSemisolid) {
 movingPlatformXSpeed = 0;
 if instance_exists(myFloorPlatform) { movingPlatformXSpeed = myFloorPlatform.xSpeed; }
 
-if place_meeting(x + movingPlatformXSpeed, y, oWall) {
+if !earlyMovingPlatformXSpeed && place_meeting(x + movingPlatformXSpeed, y, oWall) {
 		
 	var _subPixel = 0.5;
 	var _pixelCheck = _subPixel * sign(movingPlatformXSpeed);
@@ -155,47 +234,66 @@ if place_meeting(x + movingPlatformXSpeed, y, oWall) {
 }
 x += movingPlatformXSpeed;
 
-if instance_exists(myFloorPlatform) && (myFloorPlatform.ySpeed != 0 || Semisolid(myFloorPlatform))  {
+if instance_exists(myFloorPlatform) && (myFloorPlatform.ySpeed != 0 || MovingSemisolid(myFloorPlatform) || MovingSolid(myFloorPlatform)) {
 	if !place_meeting(x, myFloorPlatform.bbox_top, oWall) && myFloorPlatform.bbox_top >= bbox_bottom-terminalVelocity {
 		y = myFloorPlatform.bbox_top;
 	}
-	
-	//Going up into a solid wall while on a semisolid platform
-	if myFloorPlatform.ySpeed < 0 && place_meeting(x, y + myFloorPlatform.ySpeed, oWall) {
-		if Semisolid(myFloorPlatform) {
-			var _subPixel = 0.25;
-			while place_meeting(x, y + myFloorPlatform.ySpeed, oWall) { y +=  _subPixel; }
-			while place_meeting(x, y, oWall) { y -= _subPixel; }
-			y = round(y);
-		}
-		SetOnGround(false);
-	}
 }
 
+//Get pushed down through a semisolid by a moving solid
+if instance_exists(myFloorPlatform) && Semisolid(myFloorPlatform) && place_meeting(x, y, oWall) {
+	var _maxPushDistance = 10;
+	var _pushedDistance = 0;
+	var _startY = y;
+	while place_meeting(x, y, oWall) && _pushedDistance <= _maxPushDistance {
+		y++;
+		_pushedDistance++;
+	}
+	myFloorPlatform = noone;
+	
+	if _pushedDistance > _maxPushDistance { y = _startY; };
+}
+
+image_blend = c_white;
+if place_meeting(x, y, oWall) {
+	image_blend = c_red;	
+}
+
+#endregion
+
+image_yscale = 1;
+
 //------------------Spike Collision------------------
+#region
 //Checkpoint and spike collision
 if place_meeting(x, y, oCheckpoint) {
 	checkpointPos = [x,y]	
 }
 	
 if place_meeting(x, y, oSpike) {
+	Reset();
 	x = checkpointPos[0]
 	y = checkpointPos[1]
+	block = noone
 }
+#endregion
 
 //------------------Block Pickup------------------
-
+#region
 if interaction && place_meeting(x, y, oNumberBlock) && block == noone {
 	block = instance_place(x, y, oNumberBlock);
 	block.held = true;
+	blockYScale = ((bbox_bottom - bbox_top) + block.sprite_height) / (bbox_bottom - bbox_top);
 }
 else if interaction && block != noone {
 	block.x = x;
 	block.y = y
+	block.MoveUp();
 	block.held = false;
 	block = noone;
 }
 if block != noone {
 	block.x = x;
-	block.y = y - sprite_height;
+	block.y = y - (bbox_bottom-bbox_top);
 }
+#endregion

@@ -28,6 +28,12 @@ function Semisolid(_wall) {
 function Solid(_wall) {
 	return _wall.object_index == oWall || object_is_ancestor(_wall.object_index, oWall)
 }
+function MovingSemisolid(_wall) {
+	return _wall.object_index == oSemiSolidMovingPlatform || object_is_ancestor(_wall.object_index, oSemiSolidMovingPlatform);
+}
+function MovingSolid(_wall) {
+	return _wall.object_index == oMovingPlatform || object_is_ancestor(_wall.object_index, oMovingPlatform)
+}
 
 function GetControls() {
 	

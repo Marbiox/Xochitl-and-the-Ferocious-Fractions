@@ -15,3 +15,4 @@ if horizontal { ySpeed = 0; }
 //Move
 x += xSpeed;
 y += ySpeed;
+

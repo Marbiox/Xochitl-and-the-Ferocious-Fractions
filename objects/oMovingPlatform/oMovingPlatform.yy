@@ -1,17 +1,21 @@
 {
   "$GMObject":"",
-  "%Name":"oRoomChanger",
+  "%Name":"oMovingPlatform",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oRoomChanger",
+  "name":"oMovingPlatform",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oWall",
+    "path":"objects/oWall/oWall.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -30,9 +34,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sRoomChanger",
-    "path":"sprites/sRoomChanger/sRoomChanger.yy",
+    "name":"sMovingPlatform",
+    "path":"sprites/sMovingPlatform/sMovingPlatform.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

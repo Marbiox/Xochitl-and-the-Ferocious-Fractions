@@ -1,3 +1,9 @@
+function MoveUp() {
+	var _pixelCheck = -0.5
+	while place_meeting(x, y + _pixelCheck, oWall) { y += _pixelCheck; }
+	ySpeed = 0;
+}
+
 //Y Movement
 //Gravity
 ySpeed += grav;
