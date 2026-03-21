@@ -19,7 +19,7 @@
   "height":16,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"004bc115-6eab-43c4-8065-0cb776fbce02","blendMode":0,"displayName":"default","isLocked":false,"name":"004bc115-6eab-43c4-8065-0cb776fbce02","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"004bc115-6eab-43c4-8065-0cb776fbce02","blendMode":0,"displayName":"default","isLocked":false,"name":"004bc115-6eab-43c4-8065-0cb776fbce02","opacity":70.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sSemiSolidWall",
   "nineSlice":null,

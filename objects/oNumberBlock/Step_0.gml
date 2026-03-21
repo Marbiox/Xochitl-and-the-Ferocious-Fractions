@@ -4,8 +4,13 @@ ySpeed += grav;
 
 if ySpeed > terminalVelocity {ySpeed = terminalVelocity}
 
-//Y Collision
-//Check for solid and semisolid platforms
+if place_meeting(x, y + ySpeed, oWall) && ySpeed < 0 {
+	var _pixelCheck = 0.5 * sign(ySpeed)
+	while !place_meeting(x, y + _pixelCheck, oWall) { y += _pixelCheck; }
+	ySpeed = 0;
+}
+
+//downwards Y collision
 var _clampYSpeed = max(0, ySpeed);
 var _list = ds_list_create();
 var _array = array_create(0);
@@ -18,10 +23,11 @@ for (var i = 0; i < _listSize; i++) {
 	var _listInstance = _list[| i];
 	
 	//Avoid magnetism
-	if (_listInstance.ySpeed <= ySpeed || instance_exists(myFloorPlatform)) && (_listInstance.ySpeed > 0 || place_meeting(x, y+1 + _clampYSpeed, _listInstance)) {
-		if _listInstance.object_index == oWall || object_is_ancestor(_listInstance.object_index, oWall) || floor(bbox_bottom) <= ceil((_listInstance.bbox_top - _listInstance.ySpeed)) {
+	if (_listInstance.ySpeed <= ySpeed || instance_exists(myFloorPlatform))
+	&& (_listInstance.ySpeed > 0 || place_meeting(x, y+1 + _clampYSpeed, _listInstance)) {
+		if Solid(_listInstance) || floor(bbox_bottom) <= ceil(_listInstance.bbox_top - _listInstance.ySpeed) {
 			//Return the "highest" wall object
-			if !instance_exists(myFloorPlatform) || _listInstance.bbox_top + _listInstance.ySpeed <= myFloorPlatform.bbox_top+ySpeed || _listInstance.bbox_top + _listInstance.ySpeed <= bbox_bottom {
+			if !instance_exists(myFloorPlatform) || _listInstance.bbox_top + _listInstance.ySpeed <= myFloorPlatform.bbox_top + myFloorPlatform.ySpeed || _listInstance.bbox_top + _listInstance.ySpeed <= bbox_bottom {
 				myFloorPlatform = _listInstance;	
 			}
 		}
@@ -37,13 +43,47 @@ if instance_exists(myFloorPlatform) && !place_meeting(x, y + terminalVelocity, m
 if instance_exists(myFloorPlatform) {
 	var _subPixel = 0.5;
 	while !place_meeting(x, y + _subPixel, myFloorPlatform) && !place_meeting(x, y, oWall) { y += _subPixel; }
-	if myFloorPlatform.object_index == oSemiSolidWall ||object_is_ancestor(myFloorPlatform.object_index, oSemiSolidWall) {
+	if Semisolid(myFloorPlatform) {
 		while place_meeting(x, y, myFloorPlatform) { y -= _subPixel; }
 	}
 	y = floor(y);
 	
 	ySpeed = 0;
+	SetOnGround(true);
 }
 
 //Move
 y += ySpeed;
+
+//Collision Snapping
+movingPlatformXSpeed = 0;
+if instance_exists(myFloorPlatform) { movingPlatformXSpeed = myFloorPlatform.xSpeed; }
+
+if place_meeting(x + movingPlatformXSpeed, y, oWall) {
+		
+	var _subPixel = 0.5;
+	var _pixelCheck = _subPixel * sign(movingPlatformXSpeed);
+	while !place_meeting(x + _pixelCheck, y, oWall) {
+		x += _pixelCheck;
+	}
+	
+	movingPlatformXSpeed = 0;
+}
+x += movingPlatformXSpeed;
+
+if instance_exists(myFloorPlatform) && (myFloorPlatform.ySpeed != 0 || Semisolid(myFloorPlatform))  {
+	if !place_meeting(x, myFloorPlatform.bbox_top, oWall) && myFloorPlatform.bbox_top >= bbox_bottom-terminalVelocity {
+		y = myFloorPlatform.bbox_top;
+	}
+	
+	//Going up into a solid wall while on a semisolid platform
+	if myFloorPlatform.ySpeed < 0 && place_meeting(x, y + myFloorPlatform.ySpeed, oWall) {
+		if Semisolid(myFloorPlatform) {
+			var _subPixel = 0.25;
+			while place_meeting(x, y + myFloorPlatform.ySpeed, oWall) { y +=  _subPixel; }
+			while place_meeting(x, y, oWall) { y -= _subPixel; }
+			y = round(y);
+		}
+		SetOnGround(false);
+	}
+}

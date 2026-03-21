@@ -19,7 +19,7 @@
   "height":16,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"9df87c6c-0914-4bec-917d-8ef056b0acd9","blendMode":0,"displayName":"default","isLocked":false,"name":"9df87c6c-0914-4bec-917d-8ef056b0acd9","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"9df87c6c-0914-4bec-917d-8ef056b0acd9","blendMode":0,"displayName":"default","isLocked":false,"name":"9df87c6c-0914-4bec-917d-8ef056b0acd9","opacity":70.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sSemiSolidMovingPlatform",
   "nineSlice":null,

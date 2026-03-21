@@ -23,6 +23,7 @@ onGround = true;
 //Moving Platforms
 myFloorPlatform = noone;
 movingPlatformXSpeed = 0;
+forgetSemisolid = noone;
 
 checkpointPos = [x,y]
 

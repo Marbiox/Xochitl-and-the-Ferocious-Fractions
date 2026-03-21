@@ -4,6 +4,31 @@ function ControlsSetup() {
 	jumpKeyBufferedTimer = 0;
 }
 
+function CheckForSemisolidPlatform(_x, _y) {
+	var _return = noone;
+	if ySpeed >= 0 && place_meeting(_x, _y, oSemiSolidWall) {
+		var _list = ds_list_create();
+		var _listSize = instance_place_list(_x, _y, oSemiSolidWall, _list, false);
+		
+		for (var i = 0; i < _listSize; i++) {
+			var _listInstance = _list[| i];
+			if _listInstance != forgetSemisolid && floor(bbox_bottom) <= ceil(_listInstance.bbox_top - _listInstance.ySpeed) {
+				_return = _listInstance;
+				break;
+			}
+		}
+		ds_list_destroy(_list);
+	}
+	return _return;
+}
+
+function Semisolid(_wall) {
+	return _wall.object_index == oSemiSolidWall || object_is_ancestor(_wall.object_index, oSemiSolidWall);
+}
+function Solid(_wall) {
+	return _wall.object_index == oWall || object_is_ancestor(_wall.object_index, oWall)
+}
+
 function GetControls() {
 	
 	//Interaction Input
@@ -12,6 +37,7 @@ function GetControls() {
 	//Direction Inputs
 	rightKey = max(keyboard_check(vk_right), keyboard_check(ord("D")));
 	leftKey = max(keyboard_check(vk_left), keyboard_check(ord("A")));
+	downKey = max(keyboard_check(vk_down), keyboard_check(ord("S")));
 	
 	//Action Inputs
 	jumpKeyPressed = max(keyboard_check_pressed(vk_space), keyboard_check_pressed(vk_up), keyboard_check_pressed(ord("W")));

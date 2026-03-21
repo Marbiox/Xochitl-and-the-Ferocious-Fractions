@@ -51,7 +51,7 @@
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
     {"id":{"name":"Enumerators","path":"scripts/Enumerators/Enumerators.yy",},},
-    {"id":{"name":"MovementFunctions","path":"scripts/MovementFunctions/MovementFunctions.yy",},},
+    {"id":{"name":"PlayerFunctions","path":"scripts/PlayerFunctions/PlayerFunctions.yy",},},
     {"id":{"name":"scrGameText","path":"scripts/scrGameText/scrGameText.yy",},},
     {"id":{"name":"scrTextboxFunctions","path":"scripts/scrTextboxFunctions/scrTextboxFunctions.yy",},},
     {"id":{"name":"oldSprite","path":"sprites/oldSprite/oldSprite.yy",},},
