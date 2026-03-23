@@ -1,8 +1,98 @@
-function MoveUp() {
+ function MoveUp() {
 	var _pixelCheck = -0.5
 	while place_meeting(x, y + _pixelCheck, oWall) { y += _pixelCheck; }
 	ySpeed = 0;
 }
+
+var _rightWall = noone;
+var _leftWall = noone;
+var _bottomWall = noone;
+var _topWall = noone;
+
+var _list = ds_list_create();
+var _listSize = instance_place_list(x, y, oMovingPlatform, _list, false);
+
+for (var i = 0; i < _listSize; i++) {
+	var _listInstance = _list[| i];
+	
+	//Get closest walls in all directions
+	//Right Wall
+	if _listInstance.bbox_left - _listInstance.xSpeed >= bbox_right - 1 {
+		if !instance_exists(_rightWall) || _listInstance.bbox_left < _rightWall.bbox_left {
+			_rightWall = _listInstance;	
+		}
+	}
+	//Left Wall
+	if _listInstance.bbox_right - _listInstance.xSpeed <= bbox_left + 1 {
+		if !instance_exists(_leftWall) || _listInstance.bbox_right < _leftWall.bbox_right {
+			_leftWall = _listInstance;	
+		}
+	}
+	//Bottom Wall
+	if _listInstance.bbox_top - _listInstance.ySpeed >= bbox_bottom - 1 {
+		if !_bottomWall || _listInstance.bbox_top < _bottomWall.bbox_top {
+			_bottomWall = _listInstance;	
+		}
+	}
+	//Top Wall
+	if _listInstance.bbox_bottom - _listInstance.ySpeed <= bbox_top + 1 {
+		if !_topWall || _listInstance.bbox_bottom > _topWall.bbox_bottom {
+			_topWall = _listInstance;
+		}
+	}
+	
+}
+ds_list_destroy(_list);
+
+//Get out of walls
+if instance_exists(_rightWall) {
+	var _rightDistance = bbox_right - x;
+	x = _rightWall.bbox_left - _rightDistance;
+}
+if instance_exists(_leftWall) {
+	var _leftDistance = x - bbox_left;
+	x = _leftWall.bbox_right + _leftDistance;
+}
+if instance_exists(_bottomWall) {
+	var _bottomDistance = bbox_bottom - y;
+	y = _bottomWall.bbox_top - _bottomDistance;
+}
+if instance_exists(_topWall) {
+	var _upDistance = y - bbox_top;
+	var _targetY = _topWall.bbox_bottom + _upDistance;
+	if !place_meeting(x, _targetY, oWall) {
+		y = _targetY;	
+	}
+}
+	
+//Don't get left behind by moving platforms
+earlyMovingPlatformXSpeed = false;
+if instance_exists(myFloorPlatform) && myFloorPlatform.xSpeed != 0 && !place_meeting(x, y + terminalVelocity + 1, myFloorPlatform) {
+	if !place_meeting(x + myFloorPlatform.xSpeed, y, oWall) {
+		x += myFloorPlatform.xSpeed;	
+		earlyMovingPlatformXSpeed = true;
+	}
+}
+#endregion
+
+//------------------Movement and X Collision------------------
+#region
+//x Collision
+var subPixel = 0.5
+if place_meeting(x + xSpeed, y, oWall) {
+		
+	//Make sure there is no space between player and wall
+	var pixelCheck = subPixel * sign(xSpeed);
+	while !place_meeting(x + pixelCheck, y, oWall) {
+		x += pixelCheck;
+	}
+	
+	//Set xSpeed to zero to "collide"
+	xSpeed = 0;
+}
+
+//Move
+x += xSpeed; 
 
 //Y Movement
 //Gravity
@@ -10,13 +100,17 @@ ySpeed += grav;
 
 if ySpeed > terminalVelocity {ySpeed = terminalVelocity}
 
+
+//------------------Y Collision and X Moving Platform Collision------------------
+#region
+//Upwards Y Collision
 if place_meeting(x, y + ySpeed, oWall) && ySpeed < 0 {
 	var _pixelCheck = 0.5 * sign(ySpeed)
 	while !place_meeting(x, y + _pixelCheck, oWall) { y += _pixelCheck; }
 	ySpeed = 0;
 }
 
-//downwards Y collision
+//Downwards Y Collision
 var _clampYSpeed = max(0, ySpeed);
 var _list = ds_list_create();
 var _array = array_create(0);
@@ -29,7 +123,7 @@ for (var i = 0; i < _listSize; i++) {
 	var _listInstance = _list[| i];
 	
 	//Avoid magnetism
-	if (_listInstance.ySpeed <= ySpeed || instance_exists(myFloorPlatform))
+	if _listInstance != forgetSemisolid && (_listInstance.ySpeed <= ySpeed || instance_exists(myFloorPlatform)) 
 	&& (_listInstance.ySpeed > 0 || place_meeting(x, y+1 + _clampYSpeed, _listInstance)) {
 		if Solid(_listInstance) || floor(bbox_bottom) <= ceil(_listInstance.bbox_top - _listInstance.ySpeed) {
 			//Return the "highest" wall object
@@ -59,13 +153,17 @@ if instance_exists(myFloorPlatform) {
 }
 
 //Move
-y += ySpeed;
+if !place_meeting(x, y + ySpeed, oWall) { y += ySpeed; }
+
+if instance_exists(forgetSemisolid) && !place_meeting(x, y, forgetSemisolid) {
+	forgetSemisolid = noone;	
+}
 
 //Collision Snapping
 movingPlatformXSpeed = 0;
 if instance_exists(myFloorPlatform) { movingPlatformXSpeed = myFloorPlatform.xSpeed; }
 
-if place_meeting(x + movingPlatformXSpeed, y, oWall) {
+if !earlyMovingPlatformXSpeed && place_meeting(x + movingPlatformXSpeed, y, oWall) {
 		
 	var _subPixel = 0.5;
 	var _pixelCheck = _subPixel * sign(movingPlatformXSpeed);
@@ -77,19 +175,23 @@ if place_meeting(x + movingPlatformXSpeed, y, oWall) {
 }
 x += movingPlatformXSpeed;
 
-if instance_exists(myFloorPlatform) && (myFloorPlatform.ySpeed != 0 || Semisolid(myFloorPlatform))  {
+if instance_exists(myFloorPlatform) && (myFloorPlatform.ySpeed != 0 || MovingSemisolid(myFloorPlatform) || MovingSolid(myFloorPlatform)) {
 	if !place_meeting(x, myFloorPlatform.bbox_top, oWall) && myFloorPlatform.bbox_top >= bbox_bottom-terminalVelocity {
 		y = myFloorPlatform.bbox_top;
 	}
-	
-	//Going up into a solid wall while on a semisolid platform
-	if myFloorPlatform.ySpeed < 0 && place_meeting(x, y + myFloorPlatform.ySpeed, oWall) {
-		if Semisolid(myFloorPlatform) {
-			var _subPixel = 0.25;
-			while place_meeting(x, y + myFloorPlatform.ySpeed, oWall) { y +=  _subPixel; }
-			while place_meeting(x, y, oWall) { y -= _subPixel; }
-			y = round(y);
-		}
-		SetOnGround(false);
-	}
 }
+
+//Get pushed down through a semisolid by a moving solid
+if instance_exists(myFloorPlatform) && Semisolid(myFloorPlatform) && place_meeting(x, y, oWall) {
+	var _maxPushDistance = 10;
+	var _pushedDistance = 0;
+	var _startY = y;
+	while place_meeting(x, y, oWall) && _pushedDistance <= _maxPushDistance {
+		y++;
+		_pushedDistance++;
+	}
+	myFloorPlatform = noone;
+	
+	if _pushedDistance > _maxPushDistance { y = _startY; };
+}
+#endregion

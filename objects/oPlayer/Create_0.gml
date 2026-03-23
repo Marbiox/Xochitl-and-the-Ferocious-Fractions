@@ -35,8 +35,8 @@ blockXScale = 1;
 blockYScale = 1;
 
 //Bubble Trouble
-bubbleShootingTimer = 180;
-bubbleShootingFrames = 180;
+bubbleShootingTimer = 15;
+bubbleShootingFrames = 15;
 
 
 //sprite stuff

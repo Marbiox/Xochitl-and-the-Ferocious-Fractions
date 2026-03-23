@@ -267,7 +267,7 @@ if place_meeting(x, y, oWall) {
 //------------------Bubble Trouble------------------
 #region
 bubbleShootingTimer++;
-if bKey && bubbleShootingTimer >= bubbleShootingFrames && (!instance_exists(myFloorPlatform) || myFloorPlatform.object_index != oBubble) {
+if bKey && bubbleShootingTimer >= bubbleShootingFrames { //&& (!instance_exists(myFloorPlatform) || myFloorPlatform.object_index != oBubble) {
 	bubble = instance_create_depth(x, y, -30, oBubble);
 	bubble.facingRight = facingRight;
 	if facingRight { bubble.x = x + 15; }

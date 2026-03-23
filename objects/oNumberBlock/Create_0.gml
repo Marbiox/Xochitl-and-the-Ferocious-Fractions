@@ -5,9 +5,12 @@ value = 0
 ySpeed = 0;
 grav = 0.275;
 terminalVelocity = 4;
+xSpeed = 0;
 
 held = false;
 
 //Moving Platforms
 myFloorPlatform = noone;
 movingPlatformXSpeed = 0;
+forgetSemisolid = noone;
+earlyMovingPlatformXSpeed = false;
