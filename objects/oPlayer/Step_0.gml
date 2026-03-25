@@ -101,7 +101,7 @@ if moveDirection > 0 && rightKey || moveDirection < 0 && leftKey {
 }
 
 xSpeed += extraSpeed;
-
+show_debug_message(xSpeed);
 //x Collision
 var subPixel = 0.5
 if place_meeting(x + xSpeed, y, oWall) {
