@@ -35,8 +35,10 @@ blockXScale = 1;
 blockYScale = 1;
 
 //Bubble Trouble
-bubbleShootingTimer = 15;
-bubbleShootingFrames = 15;
+bubbleShootingTimer = 60;
+bubbleShootingFrames = 60;
+bubbleSpawnPositionY = bbox_top - bbox_bottom
+lastPlatformWasBubble = false;
 
 
 //sprite stuff

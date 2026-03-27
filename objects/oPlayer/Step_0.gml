@@ -257,6 +257,8 @@ if instance_exists(myFloorPlatform) && Semisolid(myFloorPlatform) && place_meeti
 	if _pushedDistance > _maxPushDistance { y = _startY; };
 }
 
+if myFloorPlatform == noone { SetOnGround(false); }
+
 image_blend = c_white;
 if place_meeting(x, y, oWall) {
 	image_blend = c_red;	
@@ -267,18 +269,21 @@ if place_meeting(x, y, oWall) {
 //------------------Bubble Trouble------------------
 #region
 bubbleShootingTimer++;
-if bKey && bubbleShootingTimer >= bubbleShootingFrames { //&& (!instance_exists(myFloorPlatform) || myFloorPlatform.object_index != oBubble) {
+if bKey && bubbleShootingTimer >= bubbleShootingFrames && !lastPlatformWasBubble { //(!instance_exists(myFloorPlatform) || myFloorPlatform.object_index != oBubble) {
 	bubble = instance_create_depth(x, y, -30, oBubble);
 	bubble.facingRight = facingRight;
 	if facingRight { bubble.x = x + 15; }
 	else if !facingRight { bubble.x = x - bubble.sprite_width - 15; }
-	bubble.y = y + bbox_top - bbox_bottom;
+	bubble.y =  y + bubbleSpawnPositionY
 	bubbleShootingTimer = 0;
 }
 
 if bubbleShootingTimer < bubbleShootingFrames {
 	image_blend = c_aqua;
 }
+
+if instance_exists(myFloorPlatform) && myFloorPlatform.object_index == oBubble { lastPlatformWasBubble = true; }
+else if instance_exists(myFloorPlatform) { lastPlatformWasBubble = false; }
 
 #endregion
 
@@ -303,6 +308,7 @@ if place_meeting(x, y, oSpike) {
 	Reset();
 	x = checkpointPos[0]
 	y = checkpointPos[1]
+	image_blend = c_white;
 	block = noone
 }
 #endregion
