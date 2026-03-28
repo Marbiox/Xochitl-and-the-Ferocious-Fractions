@@ -17,8 +17,11 @@ enum EVENT {
 
 enum TRIGGER {
 	ENTER_ROOM2,
+<<<<<<< HEAD
 	ENTER_ROOM3,
 	ENTER_ROOM4,
 	
+=======
+>>>>>>> parent of cdf05fb (Added some puzzles)
 	ENTER_FRACTION_FARM,
 }

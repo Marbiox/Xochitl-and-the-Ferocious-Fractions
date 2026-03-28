@@ -1,7 +1,7 @@
 {
   "$GMRoom":"v1",
   "%Name":"Room2",
-  "creationCodeFile":"rooms/Room2/RoomCreationCode.gml",
+  "creationCodeFile":"",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
@@ -25,9 +25,12 @@
     {"name":"inst_19397467","path":"rooms/Room2/Room2.yy",},
     {"name":"inst_46D7D402","path":"rooms/Room2/Room2.yy",},
     {"name":"inst_36F9850E","path":"rooms/Room2/Room2.yy",},
+<<<<<<< HEAD
     {"name":"inst_78B7F39E","path":"rooms/Room2/Room2.yy",},
     {"name":"inst_605651C9","path":"rooms/Room2/Room2.yy",},
     {"name":"inst_5F072546","path":"rooms/Room2/Room2.yy",},
+=======
+>>>>>>> parent of cdf05fb (Added some puzzles)
   ],
   "isDnd":false,
   "layers":[
@@ -54,9 +57,12 @@
         {"$GMRInstance":"v4","%Name":"inst_19397467","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_19397467","objectId":{"name":"oNumberBlock","path":"objects/oNumberBlock/oNumberBlock.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":512.0,"y":256.0,},
         {"$GMRInstance":"v4","%Name":"inst_46D7D402","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_46D7D402","objectId":{"name":"oSemiSolidWall","path":"objects/oSemiSolidWall/oSemiSolidWall.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":5.0,"scaleY":1.0,"x":704.0,"y":192.0,},
         {"$GMRInstance":"v4","%Name":"inst_36F9850E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_36F9850E","objectId":{"name":"oSemiSolidWall","path":"objects/oSemiSolidWall/oSemiSolidWall.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":5.0,"scaleY":1.0,"x":864.0,"y":192.0,},
+<<<<<<< HEAD
         {"$GMRInstance":"v4","%Name":"inst_78B7F39E","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_78B7F39E","objectId":{"name":"oTrigger","path":"objects/oTrigger/oTrigger.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":16.0,"x":1184.0,"y":0.0,},
         {"$GMRInstance":"v4","%Name":"inst_605651C9","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_605651C9","objectId":{"name":"Manager","path":"objects/Manager/Manager.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":0.0,},
         {"$GMRInstance":"v4","%Name":"inst_5F072546","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5F072546","objectId":{"name":"oWordbox","path":"objects/oWordbox/oWordbox.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":1.0,"x":608.0,"y":208.0,},
+=======
+>>>>>>> parent of cdf05fb (Added some puzzles)
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":30.0,"animationSpeedType":0,"colour":4294967295,"depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":{"name":"Sprite6","path":"sprites/Sprite6/Sprite6.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
