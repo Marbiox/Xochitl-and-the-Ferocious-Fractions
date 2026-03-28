@@ -24,7 +24,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.2.213",
+    "IDEVersion":"2024.14.3.217",
   },
   "name":"Xóchitl and the Ferocious Fractions",
   "resources":[
@@ -52,7 +52,7 @@
     {"id":{"name":"oWall_glass","path":"objects/oWall_glass/oWall_glass.yy",},},
     {"id":{"name":"oWall","path":"objects/oWall/oWall.yy",},},
     {"id":{"name":"oWordbox","path":"objects/oWordbox/oWordbox.yy",},},
-    {"id":{"name":"oXBlock","path":"objects/oXBlock/oXBlock.yy",},},
+    {"id":{"name":"oXblock","path":"objects/oXblock/oXblock.yy",},},
     {"id":{"name":"oXequals","path":"objects/oXequals/oXequals.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
@@ -91,14 +91,15 @@
     {"id":{"name":"sTrigger","path":"sprites/sTrigger/sTrigger.yy",},},
     {"id":{"name":"sWall_glass","path":"sprites/sWall_glass/sWall_glass.yy",},},
     {"id":{"name":"sWall","path":"sprites/sWall/sWall.yy",},},
+    {"id":{"name":"sXblock","path":"sprites/sXblock/sXblock.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"Room4","path":"rooms/Room4/Room4.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
     {"roomId":{"name":"Room3","path":"rooms/Room3/Room3.yy",},},
+    {"roomId":{"name":"Room4","path":"rooms/Room4/Room4.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

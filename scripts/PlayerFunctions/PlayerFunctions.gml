@@ -32,7 +32,10 @@ function MovingSemisolid(_wall) {
 	return _wall.object_index == oSemiSolidMovingPlatform || object_is_ancestor(_wall.object_index, oSemiSolidMovingPlatform);
 }
 function MovingSolid(_wall) {
-	return _wall.object_index == oMovingPlatform || object_is_ancestor(_wall.object_index, oMovingPlatform)
+	return _wall.object_index == oMovingPlatform || object_is_ancestor(_wall.object_index, oMovingPlatform);
+}
+function Block(_block) {
+	return _block.object_index == oNumberBlock || object_is_ancestor(_block.object_index, oNumberBlock);
 }
 
 function GetControls() {
