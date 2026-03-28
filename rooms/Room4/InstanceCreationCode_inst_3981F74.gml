@@ -1,1 +1,1 @@
-value="X=  "
+value="X="

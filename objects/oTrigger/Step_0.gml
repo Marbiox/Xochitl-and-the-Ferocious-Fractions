@@ -6,10 +6,6 @@ if place_meeting(x, y, oPlayer) {
 	if triggerEvent = TRIGGER.ENTER_ROOM3 {
 		room_goto(Room3)
 	}
-	if triggerEvent = TRIGGER.ENTER_ROOM4 {
-		room_goto(Room4)
-	}
-	
 	
 	if triggerEvent = TRIGGER.ENTER_FRACTION_FARM {
 		Manager.DrawTitleText("Fraction Farm");

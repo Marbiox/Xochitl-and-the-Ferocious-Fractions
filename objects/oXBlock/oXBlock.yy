@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"oXblock",
+  "%Name":"oXBlock",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oXblock",
+  "name":"oXBlock",
   "overriddenProperties":[],
   "parent":{
     "name":"Fraction Puzzle",
@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sXblock",
-    "path":"sprites/sXblock/sXblock.yy",
+    "name":"sNumberBlock",
+    "path":"sprites/sNumberBlock/sNumberBlock.yy",
   },
   "spriteMaskId":null,
   "visible":true,

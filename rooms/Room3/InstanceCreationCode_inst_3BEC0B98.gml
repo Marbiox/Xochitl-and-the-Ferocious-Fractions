@@ -1,1 +1,0 @@
-value="Level 2: Out of Reach"

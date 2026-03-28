@@ -1,1 +1,1 @@
-value = noone;
+value=0
