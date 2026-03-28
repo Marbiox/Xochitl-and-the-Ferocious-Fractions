@@ -1,1 +1,1 @@
-value = instance_place(x,y,oFraction).value;
+value=instance_place(x,y,oFraction).value;

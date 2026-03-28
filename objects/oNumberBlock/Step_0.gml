@@ -1,10 +1,9 @@
-function MoveUp() {
+ function MoveUp() {
 	var _pixelCheck = -0.5
 	while place_meeting(x, y + _pixelCheck, oWall) { y += _pixelCheck; }
 	ySpeed = 0;
 }
 
- if !held {
 var _rightWall = noone;
 var _leftWall = noone;
 var _bottomWall = noone;
@@ -196,4 +195,3 @@ if instance_exists(myFloorPlatform) && Semisolid(myFloorPlatform) && place_meeti
 	if _pushedDistance > _maxPushDistance { y = _startY; };
 }
 #endregion
-}

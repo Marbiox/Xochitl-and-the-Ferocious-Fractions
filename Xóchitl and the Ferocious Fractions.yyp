@@ -24,7 +24,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.3.217",
+    "IDEVersion":"2024.14.2.213",
   },
   "name":"Xóchitl and the Ferocious Fractions",
   "resources":[
@@ -52,7 +52,7 @@
     {"id":{"name":"oWall_glass","path":"objects/oWall_glass/oWall_glass.yy",},},
     {"id":{"name":"oWall","path":"objects/oWall/oWall.yy",},},
     {"id":{"name":"oWordbox","path":"objects/oWordbox/oWordbox.yy",},},
-    {"id":{"name":"oXblock","path":"objects/oXblock/oXblock.yy",},},
+    {"id":{"name":"oXBlock","path":"objects/oXBlock/oXBlock.yy",},},
     {"id":{"name":"oXequals","path":"objects/oXequals/oXequals.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
