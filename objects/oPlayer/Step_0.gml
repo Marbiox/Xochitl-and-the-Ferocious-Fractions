@@ -318,7 +318,7 @@ if place_meeting(x, y, oSpike) {
 if interaction && place_meeting(x, y, oNumberBlock) && block == noone {
 	block = instance_place(x, y, oNumberBlock);
 	block.held = true;
-	blockYScale = ((bbox_bottom - bbox_top) + block.sprite_height) / (bbox_bottom - bbox_top);
+	//blockYScale = ((bbox_bottom - bbox_top) + block.sprite_height) / (bbox_bottom - bbox_top);
 }
 else if interaction && block != noone {
 	block.x = x;
