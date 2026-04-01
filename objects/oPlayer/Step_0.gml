@@ -322,7 +322,7 @@ if interaction && place_meeting(x, y, oNumberBlock) && block == noone {
 }
 else if interaction && block != noone {
 	block.x = x;
-	block.y = y
+	block.y = y + 1;
 	block.MoveUp();
 	block.held = false;
 	block = noone;
