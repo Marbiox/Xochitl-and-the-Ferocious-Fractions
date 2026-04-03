@@ -1,4 +1,4 @@
-if place_meeting(x,y,oPlayer) && keyboard_check_pressed(ord("E")) && !Manager.textboxActive {
+ if place_meeting(x,y,oPlayer) && keyboard_check_pressed(ord("E")) && !Manager.textboxActive {
 	if introductionComplete {
 		CreateTextbox(DIALOGUE.NPC1_INTRODUCTION_COMPLETE);
 	}
@@ -8,6 +8,7 @@ if place_meeting(x,y,oPlayer) && keyboard_check_pressed(ord("E")) && !Manager.te
 	}
 }
 if introductionStarted && !Manager.textboxActive {
+	Manager.RemoveGate(GATE.INTRODUCTION);
 	Manager.eventIntroductionComplete = true;
 	introductionComplete = true;
 }

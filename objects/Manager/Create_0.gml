@@ -1,4 +1,4 @@
-depth = -999
+ depth = -999
 draw_set_font(fontMain);
 titleTextFrames = 180;
 titleTextTimer = 180;

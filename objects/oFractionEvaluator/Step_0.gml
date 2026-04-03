@@ -18,6 +18,10 @@ if valid {
 	}
 }
 
- if matching { Manager.eventFractionPuzzleComplete = true; }
+ if matching { 
+	 Manager.RemoveGate(gate);
+	 Manager.DrawTitleText("PUZZLE COMPLETE");
+	 instance_destroy();
+}
  
  ds_list_destroy(_fractions);
