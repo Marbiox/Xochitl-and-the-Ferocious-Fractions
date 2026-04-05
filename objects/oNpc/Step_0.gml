@@ -3,7 +3,7 @@
 		CreateTextbox(DIALOGUE.NPC1_INTRODUCTION_COMPLETE);
 	}
 	else {
-		CreateTextbox(DIALOGUE.NPC1);
+		CreateTextbox(introductiontype);
 		introductionStarted = true;
 	}
 }

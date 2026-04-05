@@ -319,14 +319,17 @@ if interaction && place_meeting(x, y, oNumberBlock) && block == noone {
 	block = instance_place(x, y, oNumberBlock);
 	block.held = true;
 	//blockYScale = ((bbox_bottom - bbox_top) + block.sprite_height) / (bbox_bottom - bbox_top);
+
 }
 else if interaction && block != noone {
 	block.x = x;
-	block.y = y + 1;
+	block.y = y
+	if myFloorPlatform == noone || !Semisolid(myFloorPlatform) { block.y += 1.5; }
 	block.MoveUp();
 	block.held = false;
 	block = noone;
 }
+
 if block != noone {
 	block.x = x;
 	block.y = y - (bbox_bottom-bbox_top);

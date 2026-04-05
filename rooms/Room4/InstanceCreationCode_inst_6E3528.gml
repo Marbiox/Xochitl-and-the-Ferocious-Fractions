@@ -1,0 +1,1 @@
+triggerEvent = TRIGGER.ENTER_ROOM5;

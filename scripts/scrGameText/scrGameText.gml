@@ -27,12 +27,37 @@ function ScrGameText(_textId, _optionId){
 					break;
 			}
 			break;
+		
 		case DIALOGUE.NPC1_INTRODUCTION_COMPLETE:
 			WriteText("Go collect your eggs bro", CHARACTER.NPC);
 			break;
+		
 		case DIALOGUE.NPC2:
-			WriteText("Hello I am NPC2");
+			WriteText("Yo.", CHARACTER.NPC);
+			WriteText("Hello again!", CHARACTER.PLAYER);
+			WriteText("Ahead of you lie the EVIL PUZZLES OF DOOM!", CHARACTER.NPC);
+			WriteText("Hold on, where are the eggs?", CHARACTER.PLAYER);
+			WriteText("You have to solve the puzzles first!", CHARACTER.NPC);
+			WriteText("But what if I don't want to?", CHARACTER.PLAYER);
+			WriteText("...", CHARACTER.NPC);
+			WriteText("Too bad! See those boxes over there?", CHARACTER.NPC);
+			WriteText("Uh... yeah?", CHARACTER.PLAYER);
+			WriteText("You can press 'E' to pick them up or drop them, and the gate at the end of the room will NOT open unless you make the two fraction platforms equal to each other.", CHARACTER.NPC);
+			WriteText("I made this one super easy so you can understand the way it works, but trust me, they get a LOT harder.", CHARACTER.NPC);
+			WriteText("Why did you make these puzzles in the first place?", CHARACTER.PLAYER);
+			WriteText("It brings me joy.", CHARACTER.NPC);
+			break;	
+		
+		case DIALOGUE.NPC3:
+			WriteText("WIP", CHARACTER.NPC);
+			WriteText("Work in progress?", CHARACTER.PLAYER);
+			WriteText("My dialogue's not done yet go away", CHARACTER.NPC);
 			break;
 		
+		case DIALOGUE.NPC4:
+			WriteText("WIP", CHARACTER.NPC);
+			WriteText("Work in progress?", CHARACTER.PLAYER);
+			WriteText("My dialogue's not done yet go away", CHARACTER.NPC);
+			break;
 	}
 }
