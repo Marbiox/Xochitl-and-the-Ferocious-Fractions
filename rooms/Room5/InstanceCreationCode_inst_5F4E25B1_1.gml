@@ -1,1 +1,2 @@
-value=4
+displayvalue="1/20"
+value=1/20

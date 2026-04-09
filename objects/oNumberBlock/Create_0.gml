@@ -1,5 +1,6 @@
 draw_set_font(fontMain);
 value = 0
+displayvalue=""
 
 //Moving
 ySpeed = 0;

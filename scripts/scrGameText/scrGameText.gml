@@ -29,7 +29,7 @@ function ScrGameText(_textId, _optionId){
 			break;
 		
 		case DIALOGUE.NPC1_INTRODUCTION_COMPLETE:
-			WriteText("Go collect your eggs bro", CHARACTER.NPC);
+			WriteText("I opened the gate. You can go now.", CHARACTER.NPC);
 			break;
 		
 		case DIALOGUE.NPC2:
@@ -55,9 +55,71 @@ function ScrGameText(_textId, _optionId){
 			break;
 		
 		case DIALOGUE.NPC4:
-			WriteText("WIP", CHARACTER.NPC);
-			WriteText("Work in progress?", CHARACTER.PLAYER);
-			WriteText("My dialogue's not done yet go away", CHARACTER.NPC);
+			switch(_optionId) {
+				case "":
+					WriteText("Wow you're solving these things... well, I wouldn't exactly say FAST, buuuuut...", CHARACTER.NPC);
+					WriteText("Just open the door.", CHARACTER.PLAYER);
+					WriteText("I will", CHARACTER.NPC);
+					WriteText("...", CHARACTER.PLAYER);
+					WriteText(".....", CHARACTER.NPC);
+					WriteText(".......", CHARACTER.PLAYER);
+					WriteText("After this POP QUIZ!!!", CHARACTER.NPC);
+					WriteText("Oh boy...", CHARACTER.PLAYER);
+					WriteText("So, If I had 45 eggs, and you wanted 12 of them... What fraction of the total amount would you have to take from me?", CHARACTER.NPC);
+					SetOption("45/12", "wrong");
+					SetOption("2/5", "wrong");
+					SetOption("4/15", "correct");
+					SetOption("12", "wrong");
+					break;
+				case "wrong":
+					WriteText("No WONDER you took so long on those puzzles!", CHARACTER.NPC);
+					WriteText("Try again.", CHARACTER.NPC);
+					WriteText("If I had 45 eggs, and you wanted 12 of them... What fraction of the total amount would you have to take from me?", CHARACTER.NPC);
+					SetOption("45/12", "wrong");
+					SetOption("2/5", "wrong");
+					SetOption("4/15", "correct");
+					SetOption("12", "wrong");
+					break;
+				case "correct":
+					WriteText("DING DING DING! Correct!", CHARACTER.NPC);
+					WriteText("Next question!", CHARACTER.NPC);
+					switch(_optionId) {
+						case "":
+							WriteText("So. You may have noticed a box simply labeled 'X' in the puzzle ahead.", CHARACTER.NPC);
+							WriteText("Oh yeah I DID see that! Is it just a useless box?", CHARACTER.PLAYER);
+							WriteText("Ohhhhhhh no. Not at all. That, my good friend, is a VARIABLE!", CHARACTER.NPC);
+							WriteText("The way you're saying that scares me.", CHARACTER.PLAYER);
+							WriteText("You can think of a variable as a box you can put a number into. The box doesn't have a value of its own, it's value is what you carry around in it. While 4 always equals 4, 'X' could equal 2, 4, 23/39, or any other number you can think of!", CHARACTER.NPC);
+							WriteText("Uhhhhhh...", CHARACTER.PLAYER);
+							WriteText("The trick is finding out what number goes in that box to make the whole equation work.", CHARACTER.NPC);
+							WriteText("So carrying around the X box would be like carrying around a '2/3' box right now...", CHARACTER.PLAYER);
+							WriteText("Wow, you picked this up pretty quick! Anyways, onto the question!", CHARACTER.NPC);
+							WriteText("If X equals 2/5, what would X divided by 2 be?", CHARACTER.NPC);
+							SetOption("1", "wrong");
+							SetOption("1/5", "correct");
+							SetOption("1 divided by 2 and a half", "wrong");
+							SetOption("2", "wrong");
+							break;
+						case "wrong":
+							WriteText("...", CHARACTER.NPC);
+							WriteText("Did I get it?", CHARACTER.PLAYER);
+							WriteText("No.", CHARACTER.NPC);
+							WriteText("If X equals 2/5, what would X divided by 2 be?", CHARACTER.NPC);
+							SetOption("1", "wrong");
+							SetOption("1/5", "correct");
+							SetOption("1 divided by 2 and a half", "wrong");
+							SetOption("2", "wrong");
+							break;
+						case "correct":
+							WriteText("You know I think I might have underestimated you", CHARACTER.NPC);
+							WriteText("...so are you going to open the door?", CHARACTER.PLAYER);
+							WriteText("Oh right yeah go ahead.", CHARACTER.NPC);
+							break;
+							
+					}
+						break;
+			}
+			
 			break;
 	}
 }

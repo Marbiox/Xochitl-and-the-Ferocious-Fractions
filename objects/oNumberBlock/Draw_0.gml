@@ -1,4 +1,7 @@
-var _text = string(value);
+
+if displayvalue=="" {var _text = string(value);}
+else var _text = displayvalue
+
 if value == noone { _text = "INVALID"; }
 var _textWidth = string_width(_text);
 var _textHeight = string_height(_text);
