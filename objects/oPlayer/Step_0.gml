@@ -323,7 +323,7 @@ if interaction && place_meeting(x, y, oNumberBlock) && block == noone {
 else if interaction && block != noone {
 	block.x = x;
 	block.y = y
-	if myFloorPlatform == noone || !Semisolid(myFloorPlatform) { block.y += 5; }
+	if myFloorPlatform == noone || !Semisolid(myFloorPlatform) { block.y += 3; }
 	block.MoveUp();
 	block.held = false;
 	block = noone;
