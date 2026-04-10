@@ -9,7 +9,6 @@
 }
 if introductionStarted && !Manager.textboxActive {
 	Manager.RemoveGate(GATE.INTRODUCTION);
-	Manager.eventIntroductionComplete = true;
 	introductionComplete = true;
 }
 

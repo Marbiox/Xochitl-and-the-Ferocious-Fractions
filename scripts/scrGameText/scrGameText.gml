@@ -117,5 +117,20 @@ function ScrGameText(_textId, _optionId){
 							
 				}
 				break;
+			case DIALOGUE.MISSINGEGGS:
+				WriteText("YOU SUCK BRO", CHARACTER.NPC);
+				WriteText("I'M SORRY I AM A FAILURE", CHARACTER.PLAYER);
+				WriteText("YOUR DEAD TO ME.................", CHARACTER.NPC);
+				break;
+			case DIALOGUE.ENOUGHEGGS:
+				WriteText("You are doing the bare minimum bro", CHARACTER.NPC);
+				WriteText(".............", CHARACTER.PLAYER);
+				WriteText("Go away", CHARACTER.NPC);
+				break;
+			case DIALOGUE.ALLTHEEGSS:
+				WriteText("You my friend are a glories speciman", CHARACTER.NPC);
+				WriteText("I am", CHARACTER.PLAYER);
+				WriteText("Yes amazing fish person", CHARACTER.NPC);
+				break;
 		}
 }
