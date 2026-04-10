@@ -1,8 +1,8 @@
 //Get Inputs
 GetControls()
 
-if !facingRight & rightKey { facingRight = true; }
-else if facingRight && leftKey { facingRight = false; }
+if !facingRight && rightKey && !leftKey { facingRight = true; }
+else if facingRight && leftKey && !rightKey { facingRight = false; }
 
 if (block != noone) {
 	image_yscale = blockYScale;	
@@ -323,7 +323,7 @@ if interaction && place_meeting(x, y, oNumberBlock) && block == noone {
 else if interaction && block != noone {
 	block.x = x;
 	block.y = y
-	if myFloorPlatform == noone || !Semisolid(myFloorPlatform) { block.y += 1.5; }
+	if myFloorPlatform == noone || !Semisolid(myFloorPlatform) { block.y += 5; }
 	block.MoveUp();
 	block.held = false;
 	block = noone;

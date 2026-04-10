@@ -12,3 +12,7 @@ if introductionStarted && !Manager.textboxActive {
 	Manager.eventIntroductionComplete = true;
 	introductionComplete = true;
 }
+
+if introductionComplete {
+	if event == EVENT.EGG_QUEST_STARTED { Manager.eventEggQuestStarted = true; }
+}
