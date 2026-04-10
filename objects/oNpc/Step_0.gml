@@ -9,6 +9,9 @@
 }
 if introductionStarted && !Manager.textboxActive {
 	Manager.RemoveGate(GATE.INTRODUCTION);
-	Manager.eventIntroductionComplete = true;
 	introductionComplete = true;
+}
+
+if introductionComplete {
+	if event == EVENT.EGG_QUEST_STARTED { Manager.eventEggQuestStarted = true; }
 }
