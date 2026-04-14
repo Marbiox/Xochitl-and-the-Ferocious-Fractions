@@ -24,7 +24,7 @@ function WriteText(_text, _character = ""){
 			break;
 		case CHARACTER.NPCMAD:
 			speakerSprite[pageNumber] = sNpcMad;
-			speakerSide[pageNumber] = -1;
+			speakerSide[pageNumber] = 1;
 			break;
 	}
 	

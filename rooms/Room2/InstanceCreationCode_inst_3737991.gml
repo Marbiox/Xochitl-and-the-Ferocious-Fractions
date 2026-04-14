@@ -1,0 +1,1 @@
+gate = GATE.PUZZLE1;

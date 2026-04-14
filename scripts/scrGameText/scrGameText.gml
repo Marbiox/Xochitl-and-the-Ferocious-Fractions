@@ -5,47 +5,81 @@ function ScrGameText(_textId, _optionId){
 		case DIALOGUE.NPC1:
 			switch(_optionId) {
 				case "":
-					WriteText("Hello I am NPC1.", CHARACTER.NPC);
-					WriteText("Hi I am Xochitl! It is nice to meet you NPC1. You look like the fractions I saw in 5th grade. I sure hope this is not an educational videogame.", CHARACTER.PLAYER);
-					WriteText("HOW DARE YOU CALL ME A FRACTION! I am soooooo much more than that... I am THE FRACTURED KING", CHARACTER.NPCMAD);
-					WriteText("I thought you were NPC1?", CHARACTER.PLAYER);
-					WriteText("Don't mind what I just said... You don't seem very smart. So I will give you fractions to do!", CHARACTER.NPC);
-					WriteText("What is 10/4 simplified", CHARACTER.NPC);
-					SetOption("20", "wrong");
-					SetOption("5/2", "correct");
+					WriteText("(Sigh)... what am I going to do?", CHARACTER.NPC);
+					WriteText("???", CHARACTER.PLAYER);
+					WriteText("My friend’s birthday is tomorrow and I still don’t know how much cake to make! There are 12 people coming but the recipe feeds 24!", CHARACTER.NPC);
+					WriteText("I've got an idea.", CHARACTER.PLAYER);
+					WriteText("What do I do??? Please tell me!", CHARACTER.NPC);
+					WriteText("Couldn't you use fractions to change the amount of cake?", CHARACTER.PLAYER);
+					WriteText("Oooooooooooo... I hadn't thought of that!", CHARACTER.NPC);
+					WriteText("Wait, what fraction would I need to make a cake for 12 people when the recipe feeds 24?", CHARACTER.NPC);
+					SetOption("2/3", "wrong1");
+					SetOption("1/3", "wrong1");
+					SetOption("1/2", "correct1");
+					SetOption("2", "wrong1");
 					break;
-				case "wrong":
-					WriteText("HOW DARE YOU BE WRONG! BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD BAD", CHARACTER.NPCMAD);
-					WriteText("Try again you fool", CHARACTER.NPC);
-					WriteText("What is 10/4 simplified", CHARACTER.NPC);
-					SetOption("20", "wrong");
-					SetOption("5/2", "correct");
+				case "wrong1":
+					WriteText("You’re so close! Think of it as 12/24. Are there any factors that 12 and 24 have in common? (Hint: 2, 4, 6, 12)", CHARACTER.NPCMAD);
+					WriteText("I have rewound time so that you may try again.", CHARACTER.NPCMAD);
+					WriteText("What fraction would I need to make a cake for 12 people when the recipe feeds 24?", CHARACTER.NPC);
+					SetOption("2/3", "wrong1");
+					SetOption("1/3", "wrong1");
+					SetOption("1/2", "correct1");
+					SetOption("2", "wrong1");
 					break;
-				case "correct":
-					WriteText("You my friend are a genius", CHARACTER.NPC);
-					WriteText("I have opened the gate so that you can collect your 5 eggs! IDK why you want eggs but who am I to stop you after you did such a great job with those fractions!", CHARACTER.NPC);
+				case "correct1":
+					WriteText("WOAH! thats so cool!!", CHARACTER.NPC);
+					WriteText("So... how would I change the recipe?", CHARACTER.NPC);
+					WriteText("Well... if you want one half of the recipe, you would need half of all the ingredients, right?",CHARACTER.PLAYER);
+					WriteText("Oh yeah! That makes sense! Hmm... a bag of flour turns into a half... 4 cups of milk become two... eggs... eggs... what about the eggs?",CHARACTER.NPC)
+					WriteText("Uuughhh... the recipe calls for 12 eggs but I only have 1, how many more eggs would I need?", CHARACTER.NPC);
+					SetOption("11", "wrong2");
+					SetOption("5", "correct2");
+					SetOption("6", "wrong2");
+					SetOption("12","wrong2");
 					break;
-			}
-			break;
+				case "wrong2":
+					WriteText("If you’re halving the recipe that would be 12/2. If Butterscotch has ONE egg, how many MORE do they need to get to 12/2?", CHARACTER.NPCMAD);
+					WriteText("I have rewound time so that you may try again.", CHARACTER.NPCMAD);
+					WriteText("Uuughhh... the recipe calls for 12 eggs but I only have 1, how many more eggs would I need?", CHARACTER.NPC);
+					SetOption("11", "wrong2");
+					SetOption("5", "correct2");
+					SetOption("6", "wrong2");
+					SetOption("12","wrong2");
+					break;
+				case "correct2":
+					WriteText("Now... where am I going to get 5 eggs...?", CHARACTER.NPC);
+					WriteText("Where do you usually go to get them?", CHARACTER.PLAYER);
+					WriteText("Oh! They're scattered all over the place! ", CHARACTER.NPC);
+					WriteText("Scattered all over the place?", CHARACTER.PLAYER);
+					WriteText("Yeah! If you see any, could you PRETTY PLEASE give them to me when you see me again? If you get me enough i might be able to make a full cake instead and give you half for helping me out so much!", CHARACTER.NPC);
+					WriteText("Neat!", CHARACTER.PLAYER);
+					break;
+							
+				}
+				break;
 		
 		case DIALOGUE.NPC1_INTRODUCTION_COMPLETE:
-			WriteText("I opened the gate. You can go now.", CHARACTER.NPC);
+			WriteText("Go forth, young salamander! Fetch me my eggs!", CHARACTER.NPC);
+			WriteText("I'm an axolotl.", CHARACTER.PLAYER);
+			WriteText("Potato, tomato. Same thing.", CHARACTER.NPC);
+			WriteText("...bye.", CHARACTER.PLAYER);
 			break;
 		
 		case DIALOGUE.NPC2:
-			WriteText("Yo.", CHARACTER.NPC);
+			WriteText("Greetings.", CHARACTER.NPCMAD);
 			WriteText("Hello again!", CHARACTER.PLAYER);
-			WriteText("Ahead of you lie the EVIL PUZZLES OF DOOM!", CHARACTER.NPC);
-			WriteText("Hold on, where are the eggs?", CHARACTER.PLAYER);
-			WriteText("You have to solve the puzzles first!", CHARACTER.NPC);
+			WriteText("You have entered a place where math and real life merge into one!", CHARACTER.NPCMAD);
+			WriteText("?!?!?!", CHARACTER.PLAYER);
+			WriteText("These puzzles ahead of you are made of PURE MATHEMATICAL ENERGY! They have replaced every key to every locked door in this ruin! If you wish to proceed, you must solve them!", CHARACTER.NPCMAD);
 			WriteText("But what if I don't want to?", CHARACTER.PLAYER);
-			WriteText("...", CHARACTER.NPC);
-			WriteText("Too bad! See those boxes over there?", CHARACTER.NPC);
+			WriteText("...", CHARACTER.NPCMAD);
+			WriteText("Too bad! See those boxes over there?", CHARACTER.NPCMAD);
 			WriteText("Uh... yeah?", CHARACTER.PLAYER);
-			WriteText("You can press 'E' to pick them up or drop them, and the gate at the end of the room will NOT open unless you make the two fraction platforms equal to each other.", CHARACTER.NPC);
-			WriteText("I made this one super easy so you can understand the way it works, but trust me, they get a LOT harder.", CHARACTER.NPC);
-			WriteText("Why did you make these puzzles in the first place?", CHARACTER.PLAYER);
-			WriteText("It brings me joy.", CHARACTER.NPC);
+			WriteText("You can press 'E' to pick them up or drop them, and the gate at the end of the room will NOT open unless you make the two fraction platforms equal to each other.", CHARACTER.NPCMAD);
+			WriteText("I made this one super easy so you can understand the way it works, but trust me, they get a LOT harder.", CHARACTER.NPCMAD);
+			WriteText("Wait, YOU MADE THEM?! Why did you make these puzzles in the first place?!", CHARACTER.PLAYER);
+			WriteText("I'm the fraction king, it brings me joy.", CHARACTER.NPCMAD);
 			break;	
 		
 		case DIALOGUE.NPC3:

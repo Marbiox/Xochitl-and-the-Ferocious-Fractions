@@ -11,5 +11,5 @@ eventFractionPuzzleComplete = false;
 eventEggQuestStarted = false;
 
 eggCount = 0;
-eggMax = 7;
-totalEggs = 10;
+eggMax = 11;
+totalEggs = 12;

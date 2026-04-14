@@ -1,1 +1,0 @@
-introductiontype=DIALOGUE.NPC2
