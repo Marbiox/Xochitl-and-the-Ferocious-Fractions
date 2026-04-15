@@ -1,8 +1,8 @@
 function Reset() {
-	with (oNumberBlock) {
+	/*with (oNumberBlock) {
 		x = xstart;
 		y = ystart;
-	}
+	}*/
 	with (oMovingPlatform) {
 		x = xstart;
 		y = ystart;

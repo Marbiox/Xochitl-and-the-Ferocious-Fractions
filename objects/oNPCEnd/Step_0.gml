@@ -11,9 +11,14 @@ if place_meeting(x,y,oPlayer) && keyboard_check_pressed(ord("E")) && !Manager.te
 		CreateTextbox(DIALOGUE.MISSINGEGGS);
 		introductionStarted = true;
 	}
+	else if introductionComplete {
+	
+	}
 }
-if introductionStarted && !Manager.textboxActive {
+if introductionStarted && !Manager.textboxActive && !introductionComplete {
 	introductionComplete = true;
+	Manager.DrawTitleText("GAME COMPLETED");
+	Manager.RemoveGate(GATE.INTRODUCTION);
 }
 
 if introductionComplete {
