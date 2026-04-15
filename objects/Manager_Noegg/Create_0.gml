@@ -8,8 +8,7 @@ text = "";
 textboxActive = false;
 eventIntroductionComplete = false;
 eventFractionPuzzleComplete = false;
-eventEggQuestStarted = false;
+eventEggQuestStarted = true;
 
-eggCount = 0;
 eggMax = 5;
 totalEggs = 11;

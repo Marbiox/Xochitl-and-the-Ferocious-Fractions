@@ -29,6 +29,7 @@
   "name":"Xóchitl and the Ferocious Fractions",
   "resources":[
     {"id":{"name":"fontMain","path":"fonts/fontMain/fontMain.yy",},},
+    {"id":{"name":"Manager_Noegg","path":"objects/Manager_Noegg/Manager_Noegg.yy",},},
     {"id":{"name":"Manager","path":"objects/Manager/Manager.yy",},},
     {"id":{"name":"oBubble","path":"objects/oBubble/oBubble.yy",},},
     {"id":{"name":"oCheckpoint","path":"objects/oCheckpoint/oCheckpoint.yy",},},

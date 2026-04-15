@@ -59,13 +59,6 @@ function ScrGameText(_textId, _optionId){
 				}
 				break;
 		
-		case DIALOGUE.NPC1_INTRODUCTION_COMPLETE:
-			WriteText("Go forth, young salamander! Fetch me my eggs!", CHARACTER.NPCBSCOTCH);
-			WriteText("I'm an axolotl.", CHARACTER.PLAYER);
-			WriteText("Potato, tomato. Same thing.", CHARACTER.NPCBSCOTCH);
-			WriteText("...bye.", CHARACTER.PLAYER);
-			break;
-		
 		case DIALOGUE.NPC2:
 			WriteText("Greetings.", CHARACTER.NPCMAD);
 			WriteText("Hello again!", CHARACTER.PLAYER);
