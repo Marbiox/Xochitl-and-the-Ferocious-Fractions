@@ -18,8 +18,16 @@ function WriteText(_text, _character = ""){
 		case CHARACTER.PLAYER:
 			speakerSprite[pageNumber] = sPlayerSpeak;
 			break;
-		case CHARACTER.NPC:
-			speakerSprite[pageNumber] = sNpcSpeak;
+		case CHARACTER.NPCBSCOTCH:
+			speakerSprite[pageNumber] = sNpcBscotchSpeak;
+			speakerSide[pageNumber] = -1;
+			break;
+		case CHARACTER.NPCFARM:
+			speakerSprite[pageNumber] = sNpcFarmerSpeak;
+			speakerSide[pageNumber] = -1;
+			break;
+		case CHARACTER.NPCSPHINX:
+			speakerSprite[pageNumber] = sNpcSphinxSpeak;
 			speakerSide[pageNumber] = -1;
 			break;
 		case CHARACTER.NPCMAD:

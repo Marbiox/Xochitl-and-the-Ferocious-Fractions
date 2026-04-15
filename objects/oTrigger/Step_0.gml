@@ -12,6 +12,9 @@
 	if triggerEvent = TRIGGER.ENTER_ROOM5 {
 		room_goto(Room5)
 	}
+	if triggerEvent = TRIGGER.ENTER_ROOM6 {
+		room_goto(Room6)
+	}
 	
 	if triggerEvent = TRIGGER.ENTER_FRACTION_FARM {
 		Manager.DrawTitleText("Fraction Farm");

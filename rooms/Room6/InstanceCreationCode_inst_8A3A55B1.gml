@@ -1,0 +1,1 @@
+value="Press 'E' to interact with things"

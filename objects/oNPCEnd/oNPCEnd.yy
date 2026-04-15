@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sNpc",
-    "path":"sprites/sNpc/sNpc.yy",
+    "name":"sNpcButterscotch",
+    "path":"sprites/sNpcButterscotch/sNpcButterscotch.yy",
   },
   "spriteMaskId":null,
   "visible":true,

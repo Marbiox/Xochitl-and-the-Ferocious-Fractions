@@ -1,1 +1,2 @@
-value=2
+displayvalue="1/10"
+value=1/10
