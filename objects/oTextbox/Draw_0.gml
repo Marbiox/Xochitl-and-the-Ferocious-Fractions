@@ -1,4 +1,4 @@
-acceptKey = keyboard_check_pressed(vk_space);
+acceptKey = keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("E"));
 
 textboxX = camera_get_view_x(view_camera[0]);
 textboxY = camera_get_view_y(view_camera[0]) + 160;

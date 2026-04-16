@@ -5,7 +5,7 @@
   "option_html5_allow_fullscreen":false,
   "option_html5_browser_title":"Xóchitl and the Ferocious Fractions",
   "option_html5_centregame":false,
-  "option_html5_display_cursor":true,
+  "option_html5_display_cursor":false,
   "option_html5_facebook_app_display_name":"",
   "option_html5_facebook_id":"",
   "option_html5_flurry_enable":false,
