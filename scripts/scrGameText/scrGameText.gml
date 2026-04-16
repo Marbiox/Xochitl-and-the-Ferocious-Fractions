@@ -7,7 +7,7 @@ function ScrGameText(_textId, _optionId){
 				case "":
 					WriteText("(Sigh)... what am I going to do?", CHARACTER.NPCBSCOTCH);
 					WriteText("???", CHARACTER.PLAYER);
-					WriteText("My friend’s birthday is tomorrow and I still don’t know how much cake to make! There are 12 people coming but the recipe feeds 24!", CHARACTER.NPCBSCOTCH);
+					WriteText("My friend's birthday is tomorrow and I still don't know how much cake to make! There are 12 people coming but the recipe feeds 24!", CHARACTER.NPCBSCOTCH);
 					WriteText("I've got an idea.", CHARACTER.PLAYER);
 					WriteText("What do I do??? Please tell me!", CHARACTER.NPCBSCOTCH);
 					WriteText("Couldn't you use fractions to change the amount of cake?", CHARACTER.PLAYER);
@@ -189,7 +189,7 @@ function ScrGameText(_textId, _optionId){
 					WriteText("Xochitl... Xochitl, please. You've GOTTA hear my riddles! I just remembered them! Don't walk away, please!", CHARACTER.NPCSPHINX);
 					WriteText("(Sigh) Alright...", CHARACTER.PLAYER);
 					WriteText("Really?!?! Oh boy oh boy oh boy oh boy I can't BELIEVE it!!!!", CHARACTER.NPCSPHINX);
-					WriteText("Ok... here I go: What’s 10/4 x 2/5?", CHARACTER.NPCSPHINX);
+					WriteText("Ok... here I go: What's 10/4 x 2/5?", CHARACTER.NPCSPHINX);
 					SetOption("20", "wrong1");
 					SetOption("25/4", "wrong1");
 					SetOption("1", "correct1");
@@ -198,7 +198,7 @@ function ScrGameText(_textId, _optionId){
 				case "wrong1":
 					WriteText("Alright, you got it wrong and I'm supposed to eat you, but I'm not going to because you are genuinely the best thing to happen to me in the past 20 years.", CHARACTER.NPCSPHINX);
 					WriteText("You may try again.", CHARACTER.NPCSPHINX);
-					WriteText("Alright, again: What’s 10/4 x 2/5?", CHARACTER.NPCSPHINX);
+					WriteText("Alright, again: What's 10/4 x 2/5?", CHARACTER.NPCSPHINX);
 					SetOption("20", "wrong1");
 					SetOption("25/4", "wrong1");
 					SetOption("1", "correct1");
@@ -207,7 +207,7 @@ function ScrGameText(_textId, _optionId){
 				case "correct1":
 					WriteText("You got it right! Someone answered my riddle and got it right!", CHARACTER.NPCSPHINX);
 					WriteText("Onto the next questi- I mean riddle!!", CHARACTER.NPCSPHINX);
-					WriteText("What’s 10/4 DIVIDED by 2/5?", CHARACTER.NPCSPHINX);
+					WriteText("What's 10/4 DIVIDED by 2/5?", CHARACTER.NPCSPHINX);
 					WriteText("You want me to divide by a fraction?!", CHARACTER.PLAYER);
 					WriteText("Yeah. That's... what grade are you in?!", CHARACTER.NPCSPHINX);
 					WriteText("Fifth!!", CHARACTER.PLAYER);
@@ -217,25 +217,25 @@ function ScrGameText(_textId, _optionId){
 					WriteText("Uhhm... uh... okay... see that box over there that says '4/5' on it?", CHARACTER.NPCSPHINX);
 					WriteText("Yeah?", CHARACTER.PLAYER);
 					WriteText("What do YOU think would happen if you put that box in the denominator?", CHARACTER.NPCSPHINX);
-					SetOption("It would divide the numerator by 20", "wrong2");
-					SetOption("It would multiply the numerator by 5 and then divide it by 4", "correct2");
-					SetOption("It would multiply the denominator by 5 and then divide it by 4", "wrong2");
-					SetOption("The world would explode because you can’t do that", "wrong2");
+					SetOption("Divide the numerator by 20", "wrong2");
+					SetOption("Multiply the top by 4 and then divide it by 5", "wrong2");
+					SetOption("Multiply the top by 5 and then divide it by 4", "correct2");
+					SetOption("The world would explode because you can't do that", "wrong2");
 					break;
 				case "wrong2":
 					WriteText("...", CHARACTER.NPCSPHINX);
 					WriteText("Did I get it?", CHARACTER.PLAYER);
 					WriteText("No.", CHARACTER.NPCSPHINX);
 					WriteText("What do YOU think would happen if you put the 4/5 box in the denominator?", CHARACTER.NPCSPHINX);
-					SetOption("It would divide the numerator by 20", "wrong2");
-					SetOption("It would multiply the denominator by 5 and then divide it by 4", "wrong2");
-					SetOption("It would multiply the numerator by 5 and then divide it by 4", "correct2");
-					SetOption("The world would explode because you can’t do that", "wrong2");
+					SetOption("Divide the numerator by 20", "wrong2");
+					SetOption("Multiply the top by 4 and then divide it by 5", "wrong2");
+					SetOption("Multiply the top by 5 and then divide it by 4", "correct2");
+					SetOption("The world would explode because you can't do that", "wrong2");
 					break;
 				case "correct2":
 					WriteText("Ok, so you understand how it works now, right?", CHARACTER.NPCSPHINX);
 					WriteText("I think so??", CHARACTER.PLAYER);
-					WriteText("Good enough. What’s 10/4 DIVIDED by 2/5?", CHARACTER.NPCSPHINX);
+					WriteText("Good enough. What's 10/4 DIVIDED by 2/5?", CHARACTER.NPCSPHINX);
 					SetOption("25/4", "correct3");
 					SetOption("20", "wrong3");
 					SetOption("2", "wrong3");
@@ -245,7 +245,7 @@ function ScrGameText(_textId, _optionId){
 					WriteText("That wasn't correct.", CHARACTER.NPCSPHINX);
 					WriteText("Darn it!", CHARACTER.PLAYER);
 					WriteText("Maybe this will help you think about it a little easier: All you have to do is flip the second fraction upside down, and then MULTIPLY that and the first one.", CHARACTER.NPCSPHINX);
-					WriteText("Again. What’s 10/4 DIVIDED by 2/5?", CHARACTER.NPCSPHINX);
+					WriteText("Again. What's 10/4 DIVIDED by 2/5?", CHARACTER.NPCSPHINX);
 					SetOption("25/4", "correct3");
 					SetOption("20", "wrong3");
 					SetOption("2", "wrong3");

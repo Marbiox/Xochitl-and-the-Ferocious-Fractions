@@ -156,11 +156,11 @@ if place_meeting(x, y + ySpeed, oWall) && ySpeed < 0 {
 
 //Downwards Y Collision
 var _clampYSpeed = max(0, ySpeed);
-var _list = ds_list_create();
+_list = ds_list_create();
 var _array = array_create(0);
 array_push(_array, oWall, oSemiSolidWall);
 
-var _listSize = instance_place_list(x, y+1 + _clampYSpeed + terminalVelocity , _array, _list, false);
+_listSize = instance_place_list(x, y+1 + _clampYSpeed + terminalVelocity , _array, _list, false);
 
 //Loop through the colliding instances and only return one if it's top is below the player
 for (var i = 0; i < _listSize; i++) {
