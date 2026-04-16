@@ -90,7 +90,7 @@ if !canMove { BlockInput() }
 //Direction
 moveDirection = rightKey - leftKey;
 if sign(xSpeed) != sign(moveDirection) {
-	sprintingTimer = 0;
+	sprintingTimer = 30;
 }
 //Get xSpeed
 xSpeed = moveDirection * minSpeed;
@@ -334,3 +334,4 @@ if block != noone {
 	block.y = y - (bbox_bottom-bbox_top);
 }
 #endregion
+
