@@ -24,7 +24,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.2.213",
+    "IDEVersion":"2024.14.4.222",
   },
   "name":"Xóchitl and the Ferocious Fractions",
   "resources":[
@@ -45,6 +45,7 @@
     {"id":{"name":"oNumerator","path":"objects/oNumerator/oNumerator.yy",},},
     {"id":{"name":"oPlatform","path":"objects/oPlatform/oPlatform.yy",},},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},},
+    {"id":{"name":"oQuit","path":"objects/oQuit/oQuit.yy",},},
     {"id":{"name":"oSemiSolidMovingPlatform","path":"objects/oSemiSolidMovingPlatform/oSemiSolidMovingPlatform.yy",},},
     {"id":{"name":"oSemiSolidWall","path":"objects/oSemiSolidWall/oSemiSolidWall.yy",},},
     {"id":{"name":"oSettings","path":"objects/oSettings/oSettings.yy",},},
@@ -92,6 +93,7 @@
     {"id":{"name":"sPlayer","path":"sprites/sPlayer/sPlayer.yy",},},
     {"id":{"name":"sPlayerSpeak","path":"sprites/sPlayerSpeak/sPlayerSpeak.yy",},},
     {"id":{"name":"Sprite5","path":"sprites/Sprite5/Sprite5.yy",},},
+    {"id":{"name":"sQuitButton","path":"sprites/sQuitButton/sQuitButton.yy",},},
     {"id":{"name":"sRatioRuins","path":"sprites/sRatioRuins/sRatioRuins.yy",},},
     {"id":{"name":"sSemiSolidMovingPlatform","path":"sprites/sSemiSolidMovingPlatform/sSemiSolidMovingPlatform.yy",},},
     {"id":{"name":"sSemiSolidWall","path":"sprites/sSemiSolidWall/sSemiSolidWall.yy",},},
@@ -108,10 +110,10 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"Room6","path":"rooms/Room6/Room6.yy",},},
-    {"roomId":{"name":"Room4","path":"rooms/Room4/Room4.yy",},},
     {"roomId":{"name":"Room5","path":"rooms/Room5/Room5.yy",},},
-    {"roomId":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
+    {"roomId":{"name":"Room4","path":"rooms/Room4/Room4.yy",},},
     {"roomId":{"name":"Room3","path":"rooms/Room3/Room3.yy",},},
+    {"roomId":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

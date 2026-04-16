@@ -23,4 +23,4 @@ if eventEggQuestStarted {
 	eggUI = string(eggCount) + " / " + string(eggMax);
 	draw_text_transformed_colour(_drawX, _drawY, eggUI, 1.5, 1.5, 0, c_white, c_white, c_white, c_white, 1);
 }
-              
+
