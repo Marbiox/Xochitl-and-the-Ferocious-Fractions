@@ -8,3 +8,6 @@ function RemoveGate(_gate) {
 	}
 }
 
+if keyboard_check_pressed(ord("R")) && keyboard_check(vk_shift) {
+	room_restart();	
+}
