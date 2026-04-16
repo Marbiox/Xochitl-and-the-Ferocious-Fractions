@@ -30,6 +30,7 @@
   "resources":[
     {"id":{"name":"fontMain","path":"fonts/fontMain/fontMain.yy",},},
     {"id":{"name":"Manager","path":"objects/Manager/Manager.yy",},},
+    {"id":{"name":"oBlackMagic","path":"objects/oBlackMagic/oBlackMagic.yy",},},
     {"id":{"name":"oBubble","path":"objects/oBubble/oBubble.yy",},},
     {"id":{"name":"oCheckpoint","path":"objects/oCheckpoint/oCheckpoint.yy",},},
     {"id":{"name":"oDenominator","path":"objects/oDenominator/oDenominator.yy",},},
